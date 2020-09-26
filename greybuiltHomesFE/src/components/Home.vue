@@ -6,10 +6,10 @@
       </div>
       <div class="nav">
         <ul class="nav-box">
-          <li><router-link tag="a" :to="{name: 'About'}">ABOUT</router-link></li>
-          <li class="nav-items"><a href="">PROJECTS</a></li>
-          <li class="nav-items"><a href="">CONTACT US</a></li>
-          <li class="nav-items"><a href="">TESTIMONIALS</a></li>
+          <li class="nav-items"><router-link  tag="a" :to="{name: 'About'}">ABOUT</router-link></li>
+          <li class="nav-items"><router-link  tag="a" :to="{name: 'Project'}">PROJECTS</router-link></li>
+          <li class="nav-items"><router-link  tag="a" :to="{name: 'Contact'}">CONTACT US</router-link></li>
+          <li class="nav-items"><router-link  tag="a" :to="{name: 'Testimonial'}">TESTIMONIALS</router-link></li>
         </ul>
       </div>
     </div>
