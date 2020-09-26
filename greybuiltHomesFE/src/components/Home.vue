@@ -6,11 +6,7 @@
       </div>
       <div class="nav">
         <ul class="nav-box">
-          <router-link tag="li" to=""></router-link>
-          <router-link tag="li" to=""></router-link>
-          <router-link tag="li" to=""></router-link>
-          <router-link tag="li" to=""></router-link>
-          <li class="nav-items"><a href="">ABOUT</a></li>
+          <li><router-link tag="a" :to="{name: 'About'}">ABOUT</router-link></li>
           <li class="nav-items"><a href="">PROJECTS</a></li>
           <li class="nav-items"><a href="">CONTACT US</a></li>
           <li class="nav-items"><a href="">TESTIMONIALS</a></li>
@@ -72,6 +68,7 @@ export default {
 .nav-box{
   display:flex;
   flex-direction: column;
+
   font-size: 2.8em;
   list-style: none;
 }
@@ -79,8 +76,6 @@ export default {
   display: flex;
   justify-content: left;
   margin: 3%;
-
-
 }
 
 a{
@@ -106,6 +101,7 @@ a, a:visited{
   width:100%;
   box-shadow: 5px 5px 10px #54595f;
 }
+
 
 
 
