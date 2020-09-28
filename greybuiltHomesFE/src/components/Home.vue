@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style scoped>
+*
+{
+  box-sizing: border-box;
+}
   .navigation
   {
     height: 94vh;
@@ -43,8 +47,8 @@ export default {
     min-height: 100%;
   }
   .logo-background{
-    position: absolute;
-    top:0px ;
+    position:absolute;
+    top:0;
     height:50%;
     width:30%;
     left: 5%;
@@ -53,6 +57,8 @@ export default {
     box-shadow: 5px 5px 10px #54595f;
   }
   .logo{
+    margin-top: -5%;
+    height:110%;
     width: 100%;
   }
 
@@ -81,8 +87,20 @@ export default {
 a{
   padding-left:5px;
 }
-a:hover{
-  border-left: 5px solid #0C1B33;
+a::after{
+
+  content:'';
+  display: block;
+  margin:0 auto;
+  height:3px;
+  width:10%;
+  background-color: #0C1B33;
+  padding-left: 2px;
+  transition: 500ms ease-in;
+  transform: scaleX(0);
+}
+a:hover::after{
+transform: scaleX(10);
 }
 
 a, a:visited{

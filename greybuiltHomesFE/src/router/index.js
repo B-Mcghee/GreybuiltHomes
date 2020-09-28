@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import About from '@/components/About'
+import Bio from '@/components/Bio'
 import Project from '@/components/Project'
 import Contact from '@/components/Contact'
 import Testimonial from '@/components/Testimonial'
+import Example from '@/components/Example'
+
 
 
 Vue.use(Router)
@@ -19,7 +21,7 @@ export default new Router({
     {
       path: '/about',
       name: 'About',
-      component: About
+      component: Bio
     },
     {
       path: '/projects',
@@ -35,6 +37,11 @@ export default new Router({
       path: '/testimonials',
       name: 'Testimonial',
       component: Testimonial
+    },
+    {
+      path: '/example',
+      name: 'Example',
+      component: Example
     }
   ]
 })

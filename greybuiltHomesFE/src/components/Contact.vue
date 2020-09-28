@@ -1,15 +1,17 @@
 <template>
   <div>
-    <h1>Hello from the Contact Component</h1>
+    <app-header></app-header>
+  <h1>Hello from Contact</h1>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 export default {
-
+  components: {'app-header': Header}
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

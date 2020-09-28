@@ -1,15 +1,17 @@
 <template>
   <div>
-    <h1>Hello from Project component</h1>
+    <app-header></app-header>
+    <h1>Hello from Projects</h1>
   </div>
 </template>
 
 <script>
+import Header from './Header'
 export default {
-
+  components: {'app-header': Header}
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
