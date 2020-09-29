@@ -23,7 +23,13 @@
 
             </ul>
         </div>
-
+    <div class="mobile-menu">
+      <router-link tag="div" :to="{name: 'Project'}"><i class="mobile-item fas fa-hammer"></i></router-link>
+      <router-link tag="div"  :to="{name: 'About'}"><i class="mobile-item fas fa-user"></i></router-link>
+      <router-link tag="div"  :to="{name: 'Home'}"><i class="mobile-item fas fa-home"></i></router-link>
+      <router-link tag="div"  :to="{name: 'Testimonial'}"><i class="mobile-item fas fa-book-open"></i></router-link>
+      <router-link tag="div"  :to="{name: 'Contact'}"><i class="mobile-item fas fa-id-card"></i></router-link>
+    </div>
     </div>
 </template>
 
@@ -34,11 +40,37 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 500px){
+  .mobile-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right: 0;
+    height: 12%;
+    background-color: #0C1B33;
+    color: #fff;
+  }
+  .mobile-item
+  {
+
+    align-content: center;
+    font-size: 2em;
+  }
+
+  .banner-container{
+    display: none;
+  }
+}
 * {
     box-sizing: border-box;
 }
 
 .banner {
+    display: grid;
     background-color: #0C1B33;
     height: 30%;
 }
@@ -47,10 +79,10 @@ ul{
   padding:0;
 }
 .banner-logo {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     width: 100vw;
-    height: 50%;
+    height: 50%; */
 }
 
 img {
@@ -58,17 +90,17 @@ img {
 }
 
 .banner-box {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0 auto; */
 }
 
 .banner-items {
-    display: flex;
+    /* display: flex;
     list-style: none;
     margin: 0 3%;
-    padding-bottom: 20px;
+    padding-bottom: 20px; */
     /* border-radius: 0 25px 0 25px; */
     /* transition-duration: 500ms; */
 }

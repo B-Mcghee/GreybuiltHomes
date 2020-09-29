@@ -41,7 +41,7 @@ export default {
     position: relative;
 
     grid-template-columns: 35% 65%;
-    grid-template-rows: 50% 40%;
+    grid-template-rows: 50% 60%;
     grid-column-gap:3%;
     background-color: #B3B6B7;
     /* grid-template-columns: 500px 450px; */
@@ -55,17 +55,23 @@ export default {
      box-shadow: 5px 5px 10px #54595f;
 }
 .grid-item-1{
+  position: relative;
   margin-top: -10%;
   margin-left: 10%;
-  width:10%;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
 }
+.nav{
+
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
 .nav-box{
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
 
 
 }
@@ -74,7 +80,7 @@ export default {
   list-style: none;
   justify-content: left;
   align-content: center;
-font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 1000)));  padding: 10px;
+/* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 1000)));  padding: 10px; */
 
 
 
@@ -102,9 +108,7 @@ a, a:visited{
   color: #0C1B33;
   text-decoration: none;
 }
-.menu {
-  display: grid;
-}
+
 .small-grid-1{
 
 }
@@ -116,7 +120,7 @@ a, a:visited{
 .logo {
 
   background-color: #0C1B33;
-  width:100%;
+  max-width:93%;
    box-shadow: 5px 5px 10px #54595f;
 
 }
