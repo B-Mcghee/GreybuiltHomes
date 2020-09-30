@@ -5,6 +5,9 @@
                 <div class="logo-background small-grid-1">
                     <img class="logo" src="/static/Images/logo.png" alt="">
                 </div>
+                <div class="mobile-background">
+                  <img class = "mobile-background-image" src="/static/Images/blueprint.jpg" alt="">
+                </div>
                 <div class="nav small-grid-2">
                     <ul class="nav-box">
                         <li class="nav-items">
@@ -65,7 +68,7 @@ export default {
 }
 .nav{
 
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: 5;
 }
 .nav-box{
@@ -109,14 +112,6 @@ a, a:visited{
   text-decoration: none;
 }
 
-.small-grid-1{
-
-}
-
-
-.logo-background {
-}
-
 .logo {
 
   background-color: #0C1B33;
@@ -135,9 +130,48 @@ max-width: 93%;
   width: 100%;
   height: auto;
   left: 0;
- margin-top: 3%;
+  margin-top: 3%;
 
    box-shadow: 5px 5px 10px #54595f;
+
+}
+.mobile-background{
+  display: none;
+}
+@media screen and (max-width: 500px){
+  .grid-item-1{
+    max-width: 60%;
+    margin: -10% auto 10% auto;
+    grid-column: 1 / -1;
+
+  }
+  .grid-item-2{
+    display: none;
+  }
+  .mobile-background{
+
+    display: block;
+
+  }
+  .mobile-background-image{
+        grid-column: 1/-1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .grid-container {
+    display: grid;
+    position: relative;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 50% 30%;
+
+  }
+  .nav{
+    grid-row: 3 / 4;
+  }
 
 }
 </style>

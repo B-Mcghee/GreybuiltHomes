@@ -40,33 +40,12 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 500px){
-  .mobile-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left:0;
-    right: 0;
-    height: 12%;
-    background-color: #0C1B33;
-    color: #fff;
-  }
-  .mobile-item
-  {
 
-    align-content: center;
-    font-size: 2em;
-  }
-
-  .banner-container{
-    display: none;
-  }
-}
 * {
     box-sizing: border-box;
+}
+.mobile-menu{
+  display: none;
 }
 
 .banner {
@@ -136,5 +115,30 @@ a::before {
 a:hover::after,
 a:hover::before {
     transform: scaleX(10);
+}
+@media screen and (max-width: 500px){
+  .mobile-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    right: 0;
+    height: 12%;
+    background-color: #0C1B33;
+    color: #fff;
+  }
+  .mobile-item
+  {
+
+    align-content: center;
+    font-size: 2em;
+  }
+
+  .banner-container{
+    display: none;
+  }
 }
 </style>

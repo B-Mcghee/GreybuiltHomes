@@ -31,6 +31,8 @@ export default {
 {
   box-sizing: border-box;
 }
+
+
   .navigation
   {
     height: 94vh;
@@ -119,7 +121,6 @@ a, a:visited{
   width:100%;
   box-shadow: 5px 5px 10px #54595f;
 }
-
 
 
 
