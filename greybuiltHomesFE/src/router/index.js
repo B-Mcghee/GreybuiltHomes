@@ -6,6 +6,7 @@ import Project from '@/components/Project'
 import Contact from '@/components/Contact'
 import Testimonial from '@/components/Testimonial'
 import Example from '@/components/Example'
+import Calendar from '@/components/Calendar'
 
 
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/example',
       name: 'Example',
       component: Example
+    },
+    {
+      path: '/calendar',
+      name: 'Calendar',
+      component: Calendar
     }
   ]
 })

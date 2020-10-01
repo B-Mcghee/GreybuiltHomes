@@ -169,8 +169,8 @@ max-width: 93%;
     grid-template-rows: 20% 50% 30%;
 
   }
-  .nav{
-    grid-row: 3 / 4;
+  .{
+    grid-row-s: 3 / 4;
   }
 
 }
