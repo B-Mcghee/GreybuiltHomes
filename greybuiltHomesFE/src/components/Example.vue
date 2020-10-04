@@ -8,7 +8,7 @@
                 <div class="mobile-background">
                   <img class = "mobile-background-image" src="/static/Images/blueprint.jpg" alt="">
                 </div>
-                <div class="nav small-grid-2">
+            <div class="nav grid-item-2">
                     <ul class="nav-box">
                         <li class="nav-items">
                             <router-link tag="a" :to="{name: 'About'}">ABOUT</router-link>
@@ -25,7 +25,8 @@
                     </ul>
                 </div>
             </div>
-              <div class="grid-item-2">
+
+              <div class="grid-item-3">
                 <img class="home-image" src="/static/Images/side.jpg" alt="">
               </div>
         </div>
@@ -41,53 +42,74 @@ export default {
 <style scoped>
 .grid-container {
     display: grid;
-    position: relative;
-
-    grid-template-columns: 35% 65%;
-    grid-template-rows: 50% 60%;
-    grid-column-gap:3%;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 50% auto;
     background-color: #B3B6B7;
-    /* grid-template-columns: 500px 450px; */
-    /* grid-auto-rows: minmax(150px, auto); */
     min-height: 94vh;
     min-width:96vw;
     margin-top: 3vh;
     margin-bottom: 3vh;
     margin-left: 2vw;
     margin-right: 2vw;
-     box-shadow: 5px 5px 10px #54595f;
+    box-shadow: 5px 5px 10px #54595f;
+    grid-column-gap:3%;
+    grid-template-areas:
+   "grid-item-1 grid-item-3 "
+    "grid-item-2 grid-item-3 ";
+
 }
 .grid-item-1{
+  grid-area: grid-item-1;
+  justify-self: end;
+  align-self: start;
+  margin-top: -8%;
+  margin-left: 5%;
+
+}
+.grid-item-2{
+  grid-area: grid-item-2;
+  justify-self: center;
+  align-self: start;
+}
+.grid-item-3{
+  grid-area: grid-item-3;
+  margin-right: 3%;
+}
+.home-image {
+
   position: relative;
-  margin-top: -10%;
-  margin-left: 10%;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  width: 100%;
+  height: auto;
+  left: 0;
+  margin-top: 3%;
+
+   box-shadow: 5px 5px 10px #54595f;
+
 }
 .nav{
 
-  grid-row-start: 2;
-  grid-row-end: 5;
+
 }
 .nav-box{
   margin: 0;
+  margin-top: 0.8em;
+  margin-left: 0.5em;
   padding: 0;
+  display:flex;
+  flex-direction: column;
+  font-size: 2.5vw;
 
 
-
-}
-.nav-items{
-  display: flex;
   list-style: none;
+}
+.nav-items {
+  display: flex;
   justify-content: left;
-  align-content: center;
-/* font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 1000)));  padding: 10px; */
-
-
+  margin: 3%;
+    margin-left: 1em;
 
 }
+
 a{
   padding-left:5px;
 }
@@ -120,25 +142,12 @@ a, a:visited{
 
 }
 
-.grid-item-2{
-position: relative;
-max-width: 93%;
-}
-.home-image {
 
-  position: relative;
-  width: 100%;
-  height: auto;
-  left: 0;
-  margin-top: 3%;
 
-   box-shadow: 5px 5px 10px #54595f;
-
-}
 .mobile-background{
   display: none;
 }
-@media screen and (max-width: 500px){
+/* @media screen and (max-width: 500px){
   .grid-item-1{
     max-width: 60%;
     margin: -10% auto 10% auto;
@@ -169,9 +178,6 @@ max-width: 93%;
     grid-template-rows: 20% 50% 30%;
 
   }
-  .{
-    grid-row-s: 3 / 4;
-  }
 
-}
+} */
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <app-header></app-header>
-    <h1>Hello from Projects</h1>
+    <h1>Projects</h1>
+    <div class="container">
+    </div>
   </div>
 </template>
 
@@ -13,5 +15,8 @@ export default {
 </script>
 
 <style scoped>
+@media and (max-width: 500px)
+{
 
+}
 </style>
