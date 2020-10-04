@@ -1,35 +1,35 @@
 <template>
-    <div class="banner">
-        <div class="banner-logo">
-            <img src="/static/Images/logo.png" alt="">
-        </div>
-        <div class="banner-container">
-            <ul class="banner-box">
-                <li class="banner-items">
-                    <router-link tag="a" :to="{name: 'Home'}">HOME</router-link>
-                </li>
-                <li class="banner-items">
-                    <router-link tag="a" :to="{name: 'About'}">ABOUT</router-link>
-                </li>
-                <li class="banner-items">
-                    <router-link tag="a" :to="{name: 'Project'}">PROJECTS</router-link>
-                </li>
-                <li class="banner-items">
-                    <router-link tag="a" :to="{name: 'Testimonial'}">TESTIMONIALS</router-link>
-                </li>
-                <li class="banner-items ">
-                    <router-link tag="a" :to="{name: 'Contact'}">CONTACT US</router-link>
-                </li>
+    <div class="container">
+        <div class="banner">
+            <div class="banner-container">
+                <nav class="banner-box">
+                    <div class="banner-items banner2">
+                        <router-link tag="a" :to="{name: 'About'}">ABOUT</router-link>
+                    </div>
+                    <div class="banner-items banner4">
+                        <router-link tag="a" :to="{name: 'Testimonial'}">TESTIMONIALS</router-link>
+                    </div>
+                    <div class="banner-items banner1">
+                        <router-link tag="a" :to="{name: 'Home'}"><img src="/static/Images/logo.png" alt=""></router-link>
+                    </div>
+                    <div class="banner-items banner3">
+                        <router-link tag="a" :to="{name: 'Project'}">PROJECTS</router-link>
+                    </div>
+                    <div class="banner-items banner5">
+                        <router-link tag="a" :to="{name: 'Contact'}">CONTACT US</router-link>
+                    </div>
 
-            </ul>
+                </nav>
+            </div>
+        <div class="mobile-menu">
+            <router-link tag="div" :to="{name: 'Project'}"><i class="mobile-item fas fa-hammer"></i></router-link>
+            <router-link tag="div" :to="{name: 'About'}"><i class="mobile-item fas fa-user"></i></router-link>
+            <router-link tag="div" :to="{name: 'Home'}"><i class="mobile-item fas fa-home"></i></router-link>
+            <router-link tag="div" :to="{name: 'Testimonial'}"><i class="mobile-item fas fa-book-open"></i></router-link>
+            <router-link tag="div" :to="{name: 'Contact'}"><i class="mobile-item fas fa-id-card"></i></router-link>
         </div>
-    <div class="mobile-menu">
-      <router-link tag="div" :to="{name: 'Project'}"><i class="mobile-item fas fa-hammer"></i></router-link>
-      <router-link tag="div"  :to="{name: 'About'}"><i class="mobile-item fas fa-user"></i></router-link>
-      <router-link tag="div"  :to="{name: 'Home'}"><i class="mobile-item fas fa-home"></i></router-link>
-      <router-link tag="div"  :to="{name: 'Testimonial'}"><i class="mobile-item fas fa-book-open"></i></router-link>
-      <router-link tag="div"  :to="{name: 'Contact'}"><i class="mobile-item fas fa-id-card"></i></router-link>
-    </div>
+        </div>
+
     </div>
 </template>
 
@@ -39,13 +39,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
-* {
-    box-sizing: border-box;
-}
-.mobile-menu{
-  display: none;
+
+.mobile-menu {
+    display: none;
 }
 
 .banner {
@@ -53,40 +51,28 @@ export default {
     background-color: #0C1B33;
     height: 30%;
 }
-ul{
-  margin:0;
-  padding:0;
-}
-.banner-logo {
-    /* display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 50%; */
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 img {
-    height: 20vh;
+    height: 25vh;
 }
 
 .banner-box {
-    /* display: flex;
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px 0px;
+}
+
+.banner-box {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin: 0 auto; */
+    justify-content: space-around;
+    align-items: center;
 }
-
-.banner-items {
-    /* display: flex;
-    list-style: none;
-    margin: 0 3%;
-    padding-bottom: 20px; */
-    /* border-radius: 0 25px 0 25px; */
-    /* transition-duration: 500ms; */
-}
-
-/* .banner-container {
-    margin-left: 8%;
-} */
 
 a {
     font-size: 1.8em;
@@ -116,29 +102,38 @@ a:hover::after,
 a:hover::before {
     transform: scaleX(10);
 }
-@media screen and (max-width: 500px){
-  .mobile-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left:0;
-    right: 0;
-    height: 12%;
-    background-color: #0C1B33;
-    color: #fff;
-  }
-  .mobile-item
-  {
 
-    align-content: center;
-    font-size: 2em;
-  }
+@media screen and (max-width: 500px) {
+    .mobile-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        background-color: #0C1B33;
+        color: #fff;
+        height: 15%;
+   .mobile-item {
 
-  .banner-container{
-    display: none;
-  }
+        font-size: 2em;
+    }
+    }
+
+    .banner2,
+    .banner3,
+    .banner4,
+    .banner5 {
+        display: none;
+    }
+    .banner-box {
+        padding: 0px;
+    }
+    img{
+      height: 20vh;
+    }
 }
 </style>
