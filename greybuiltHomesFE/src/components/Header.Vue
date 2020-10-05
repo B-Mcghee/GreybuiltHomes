@@ -40,7 +40,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+$container: #B3B6B7;
+$shadowGrey: #54595f;
+$background: #0C1B33;
 
 .mobile-menu {
     display: none;
@@ -60,14 +62,13 @@ ul {
 img {
     height: 25vh;
 }
-
+.banner-container{
+  background-color: $background;
+}
 .banner-box {
     margin: 0 auto;
     width: 90%;
     padding: 20px 0px;
-}
-
-.banner-box {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -102,7 +103,16 @@ a:hover::after,
 a:hover::before {
     transform: scaleX(10);
 }
+@media screen and (max-width: 1024px){
+  .banner{
 
+    font-size: 0.8em;
+
+    img{
+      height: 15vh;
+    }
+  }
+}
 @media screen and (max-width: 500px) {
     .mobile-menu {
         display: flex;
