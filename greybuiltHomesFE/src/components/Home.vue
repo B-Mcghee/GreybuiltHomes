@@ -203,7 +203,7 @@ a::after {
 }
 
 a:hover::after {
-    transform: scaleX(10);
+    transform: scaleX(5);
 }
 
 a,
