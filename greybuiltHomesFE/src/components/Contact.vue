@@ -11,7 +11,7 @@
                     <label for="">Last Name</label>
                     <input type="text">
                   </div>
-                  <div>
+                  <div class="form-interest">
                     <label for="">Interested In?</label>
                     <select name="" id="">
                     <option value="type" v-for="type in interests">{{type}}</option>
@@ -201,6 +201,12 @@ input:focus {
 }
 
 @media screen and (max-width: 500px) {
+  .form-interest{
+    display: flex;
+    flex-direction: row;
+    justify-items: space-around;
+    justify-content: space-evenly;
+  }
     .content {
         border-radius: 15px;
         padding: 10px 0px;

@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "project_id": 1,
+      "title": "Corydon",
+      "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+      "images": "static/Images/blueprint.jpg",
+      "showProject": true
+    },
+    {
+      "project_id": 2,
+      "title": "New Albany",
+      "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+      "images": "static/Images/House.jpg",
+      "showProject": false
+    },
+    {
+      "project_id": 3,
+      "title": "Jeffersonville",
+      "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+      "images": "static/Images/side.jpg",
+      "showProject": true
+    },
+    {
+      "project_id": 1,
+      "title": "Louisville",
+      "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+      "images": "static/Images/side.jpg",
+      "showProject": true
+    }
+  ]
+}
