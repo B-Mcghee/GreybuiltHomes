@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="project-root">
+
         <app-header></app-header>
         <h1>Projects</h1>
         <div class="project-container">
@@ -50,20 +51,42 @@ export default {
 $container: #B3B6B7;
 $shadowGrey: #54595f;
 $background: #0C1B33;
+.project-root{
+
+  height: 100vh;
+}
 @media screen and (max-width: 500px) {
     .project-container {
-        position: relative;
-        height: 80%;
-        max-width: 100vw;
-        overflow: scroll;
-        overflow-x: auto;
-        top: 15%;
-        img {
-            border-radius: 12px;
-            height: 200px;
-            width: 250px;
-        }
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 140px;
+      height: 100%;
+      width: 100vw;
+      gap: 1%;
     }
-    .project {}
+    h1{
+      margin: 20px auto;
+      text-align: center;
+      grid-column: 1 / -1;
+      height: 50px;
+    }
+    .project {
+      position: relative;
+      border: 2px solid $background;
+
+
+    }
+         img{
+        position: absolute;
+        display: block;
+        margin: auto auto;
+      z-index: -1;
+        height: 80%;
+        width: 100%;
+
+
+      }
+
 }
 </style>

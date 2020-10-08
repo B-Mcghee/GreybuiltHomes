@@ -16,7 +16,7 @@ export default {
   font-family: 'Libre Franklin','Raleway','Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
 }
 body{

@@ -40,9 +40,7 @@ $background: #0C1B33;
 .mobile-menu {
     display: none;
 }
-.container{
-  position: sticky;
-}
+
 .banner {
     display: grid;
     background-color: #0C1B33;
@@ -110,24 +108,30 @@ a:hover::before {
 }
 
 @media screen and (max-width: 500px) {
-    .mobile-menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: auto;
-        background-color: #0C1B33;
-        color: #fff;
-        height: 15%;
-   .mobile-item {
+  .container{
 
-        font-size: 2em;
-    }
-    }
+    position: sticky;
+    top: 0;
+
+  }
+  //   .mobile-menu {
+  //       display: flex;
+  //       flex-direction: row;
+  //       justify-content: space-around;
+  //       align-items: center;
+  //       position: fixed;
+  //       bottom: 0;
+  //       left: 0;
+  //       right: 0;
+  //       height: auto;
+  //       background-color: #0C1B33;
+  //       color: #fff;
+  //       height: 15%;
+  //  .mobile-item {
+
+  //       font-size: 2em;
+  //   }
+  //   }
 
     .banner2,
     .banner3,
