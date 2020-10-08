@@ -12,7 +12,7 @@
       "title": "New Albany",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
       "images": "static/Images/House.jpg",
-      "showProject": false
+      "showProject": true
     },
     {
       "project_id": 3,
@@ -22,7 +22,14 @@
       "showProject": true
     },
     {
-      "project_id": 1,
+      "project_id": 4,
+      "title": "Louisville",
+      "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+      "images": "static/Images/side.jpg",
+      "showProject": true
+    },
+    {
+      "project_id": 5,
       "title": "Louisville",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
       "images": "static/Images/side.jpg",

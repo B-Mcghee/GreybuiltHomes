@@ -21,13 +21,6 @@
 
                 </nav>
             </div>
-        <div class="mobile-menu">
-            <router-link tag="div" :to="{name: 'Project'}"><i class="mobile-item fas fa-hammer"></i></router-link>
-            <router-link tag="div" :to="{name: 'About'}"><i class="mobile-item fas fa-user"></i></router-link>
-            <router-link tag="div" :to="{name: 'Home'}"><i class="mobile-item fas fa-home"></i></router-link>
-            <router-link tag="div" :to="{name: 'Testimonial'}"><i class="mobile-item fas fa-book-open"></i></router-link>
-            <router-link tag="div" :to="{name: 'Contact'}"><i class="mobile-item fas fa-id-card"></i></router-link>
-        </div>
         </div>
 
     </div>
@@ -47,7 +40,9 @@ $background: #0C1B33;
 .mobile-menu {
     display: none;
 }
-
+.container{
+  position: sticky;
+}
 .banner {
     display: grid;
     background-color: #0C1B33;
