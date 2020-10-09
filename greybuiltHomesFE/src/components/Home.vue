@@ -63,7 +63,9 @@ export default {
 $container: #B3B6B7;
 $shadowGrey: #54595f;
 $background: #0C1B33;
-
+div{
+  text-align: center;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 30% auto;

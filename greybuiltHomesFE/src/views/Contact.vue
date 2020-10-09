@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-header></app-header>
+        <!-- <app-header></app-header> -->
         <div class="content">
             <h2>Contact</h2>
             <div class="form-container">
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import Header from './Header'
+// import Header from '@/components/Header'
 export default {
     data() {
         return {
@@ -70,8 +70,8 @@ export default {
       info(){
         this.show = !this.show;
       }
-    },
-    components: { 'app-header': Header }
+    }//,
+    // components: { 'app-header': Header }
 }
 </script>
 

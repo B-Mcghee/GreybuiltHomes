@@ -1,0 +1,90 @@
+<template>
+  <nav :style = "{background: [background, '#333'] }" >
+    <ul :style = "{background: [background, '#333'] }">
+      <figure class="image-logo">
+        <img :src="imagePath" height="40px" width="40px" alt="">
+      </figure>
+      <li v-for="(link, index) in navLinks"
+      :key ="index"
+      :style = "{color:[linkColor, '#DDD']}"
+      @mouseenter="$event.currentTarget.style.background = hoverBackground, '#999'"
+      @mouseleave="$event.currentTarget.style.background = Background, '#333'"
+      >
+      <router-link
+      :style = "{color:[linkColor, '#DDD']}"
+      tag="a"
+      :to="{name: link.path}">{{link.text}}<i :class="link.icon"/></router-link>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script>
+export default {
+  props: [
+    'navLinks', 'background', 'LinkColor', 'hoverBackground', 'imagePath'
+  ]
+
+}
+</script>
+
+<style scoped lang="scss">
+  nav {
+    height: 60px;
+    width: 100%;
+
+     ul{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+
+    figure{
+      cursor: pointer;
+    }
+    a{
+      text-decoration: none;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    i{
+      margin-right: 10px;
+      font-size: 22px;
+    }
+    li{
+      list-style-type: none;
+      padding: 10px 20px;
+    }
+
+  }
+  }
+
+  @media screen and (max-width: 759px){
+    nav {
+
+      ul{
+        position: absolute;
+        flex-direction: column;
+        width: 300px;
+
+        li{
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        a{
+          flex-direction: row;
+          margin-left: 20px;
+          justify-content: space-between;
+          margin-right:13px;
+        }
+      }
+    }
+  }
+
+</style>

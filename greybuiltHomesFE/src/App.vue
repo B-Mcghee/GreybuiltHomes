@@ -1,13 +1,46 @@
 <template>
   <div id="app">
 
+    <app-main
+      :nav-links="navLinks"
+      :image-path ="require('../static/Images/logo.png')"
+    />
     <router-view/>
   </div>
 </template>
 
 <script>
+import Main from '@/components/Main'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {'app-main': Main},
+  data: () => ({
+
+      navLinks: [
+        {
+          text: 'Contact',
+          path: '/contact',
+          icon: 'fas fa-id-card'
+        },
+                {
+          text: 'About',
+          path: '/about',
+          icon: 'fas fa-user'
+        },
+                {
+          text: 'Projects',
+          path: '/project',
+          icon: 'fas fa-hammer'
+        },
+                {
+          text: 'Testimonial',
+          path: '/testimonial',
+          icon: 'fas fa-book-open'
+        },
+      ]
+
+})
 }
 </script>
 
