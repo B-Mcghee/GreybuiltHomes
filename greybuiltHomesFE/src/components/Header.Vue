@@ -1,33 +1,75 @@
 <template>
-    <div class="container">
-        <div class="banner">
-            <div class="banner-container">
-                <nav class="banner-box">
-                    <div class="banner-items banner2">
-                        <router-link tag="a" :to="{name: 'About'}">ABOUT</router-link>
-                    </div>
-                    <div class="banner-items banner4">
-                        <router-link tag="a" :to="{name: 'Testimonial'}">TESTIMONIALS</router-link>
-                    </div>
-                    <div class="banner-items banner1">
-                        <router-link tag="a" :to="{name: 'Home'}"><img src="/static/Images/logo.png" alt=""></router-link>
-                    </div>
-                    <div class="banner-items banner3">
-                        <router-link tag="a" :to="{name: 'Project'}">PROJECTS</router-link>
-                    </div>
-                    <div class="banner-items banner5">
-                        <router-link tag="a" :to="{name: 'Contact'}">CONTACT US</router-link>
-                    </div>
-
-                </nav>
+  <div class="container" ref="container">
+    <div class="banner-container">
+        <nav class="banner-box">
+            <div class="banner-items banner2">
+                <router-link tag="a" :to="{name: navLinks[1].text}">ABOUT</router-link>
             </div>
-        </div>
-
+            <div class="banner-items banner4">
+                <router-link tag="a" :to="{name: navLinks[3].text}">TESTIMONIALS</router-link>
+            </div>
+            <div class="banner-items banner1">
+                <router-link tag="a" :to="{name: navLinks[4].text}"><img class="image-path" :src=imagePath alt=""></router-link>
+            </div>
+            <div class="banner-items banner3">
+                <router-link tag="a" :to="{name: navLinks[2].text}">PROJECTS</router-link>
+            </div>
+            <div class="banner-items banner5">
+                <router-link tag="a" :to="{name: navLinks[0].text}">CONTACT US</router-link>
+            </div>
+        </nav>
     </div>
+    <app-menu v-if="mobilemenu"></app-menu>
+
+  </div>
+
 </template>
 
 <script>
+import MobileMenu from '@/components/MobileMenu.vue'
+
 export default {
+    props: [
+        'navLinks', 'imagePath'
+    ],
+    components:
+    {'app-menu': MobileMenu},
+    data()
+      {
+        return{
+         mobilemenu:false,
+         windowWidth: 0
+
+        }
+      },
+    methods:
+    {
+      getWindowWidth(event){
+
+        this.windowWidth = document.documentElement.clientWidth;
+
+        if(this.windowWidth < 759){
+          this.mobilemenu = true;
+        }
+        else{
+          this.mobilemenu = false;
+        }
+      }
+    },
+    mounted() {
+
+        this.$nextTick(function()
+        {
+          window.addEventListener('resize', this.getWindowWidth);
+
+          this.getWindowWidth()
+        })
+      },
+    beforeDestroy(){
+      window.removeEventListener('resize', this.getWindowWidth);
+
+    }
+
 
 }
 </script>
@@ -37,39 +79,35 @@ $container: #B3B6B7;
 $shadowGrey: #54595f;
 $background: #0C1B33;
 
-.mobile-menu {
-    display: none;
+.container{
+  width:100vw;
+
 }
 
-.banner {
-    display: grid;
-    background-color: #0C1B33;
-    height: 30%;
-}
+.banner-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height:15%;
+    background-color: $background;
+    .banner-box {
+        max-height: 100%;
+        margin: 0 auto;
+        padding-left: 10em;
+        padding-right: 10em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    height: 25vh;
-}
-.banner-container{
-  background-color: $background;
-}
-.banner-box {
-    margin: 0 auto;
-    width: 90%;
-    padding: 20px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+      .image-path{
+        max-height: 200px;
+      }
+    }
 }
 
 a {
-    font-size: 1.8em;
+    font-size: 1rem;
 }
 
 a,
@@ -96,43 +134,35 @@ a:hover::after,
 a:hover::before {
     transform: scaleX(10);
 }
-@media screen and (max-width: 1024px){
-  .banner{
 
-    font-size: 0.8em;
+// @media screen and (max-width: 1024px) {
+//     .banner {
+//         font-size: 0.8em;
+//         img {
+//             height: 15vh;
+//         }
+//     }
+// }
 
-    img{
-      height: 15vh;
-    }
-  }
-}
+@media screen and (max-width: 759px) {
 
-@media screen and (max-width: 500px) {
-  .container{
-
-    position: sticky;
-    top: 0;
-
-  }
   //   .mobile-menu {
-  //       display: flex;
-  //       flex-direction: row;
-  //       justify-content: space-around;
-  //       align-items: center;
-  //       position: fixed;
-  //       bottom: 0;
-  //       left: 0;
-  //       right: 0;
-  //       height: auto;
-  //       background-color: #0C1B33;
-  //       color: #fff;
-  //       height: 15%;
-  //  .mobile-item {
-
-  //       font-size: 2em;
-  //   }
-  //   }
-
+    //       display: flex;
+    //       flex-direction: row;
+    //       justify-content: space-around;
+    //       align-items: center;
+    //       position: fixed;
+    //       bottom: 0;
+    //       left: 0;
+    //       right: 0;
+    //       height: auto;
+    //       background-color: #0C1B33;
+    //       color: #fff;
+    //       height: 15%;
+    //  .mobile-item {
+    //       font-size: 2em;
+    //   }
+    //   }
     .banner2,
     .banner3,
     .banner4,
@@ -141,9 +171,12 @@ a:hover::before {
     }
     .banner-box {
         padding: 0px;
+
+        .image-path{
+          max-width: 5em;
+        }
     }
-    img{
-      height: 20vh;
-    }
+
+
 }
 </style>

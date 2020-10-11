@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Bio from '@/components/Bio'
-import Project from '@/components/Project'
-import Contact from '@/views/Contact'
-import Testimonial from '@/components/Testimonial'
+import Bio from '../views/Bio.vue'
+import Project from '../views/Project.vue'
+import Contact from '../views/Contact.vue'
+import Testimonial from '../views/Testimonial.vue'
 import Example from '@/components/Example'
 import Calendar from '@/components/Calendar'
 import Main from '@/components/Main'
@@ -28,22 +28,23 @@ export default new Router({
     {
       path: '/about',
       name: 'About',
-      component: Bio
+      component: () => { return import ('../views/Bio.vue')}
     },
     {
       path: '/projects',
       name: 'Project',
-      component: Project
+      component: () => { return import ('../views/Project.vue') }
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact
+      component: () => { return import ('../views/Contact.vue') }
     },
     {
       path: '/testimonials',
       name: 'Testimonial',
-      component: Testimonial
+      component: () => { return import ('../views/Testimonial.vue')}
+
     },
     {
       path: '/example',

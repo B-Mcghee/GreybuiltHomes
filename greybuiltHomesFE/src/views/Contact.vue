@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="root">
         <!-- <app-header></app-header> -->
         <div class="content">
             <h2>Contact</h2>

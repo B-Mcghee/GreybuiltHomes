@@ -1,7 +1,7 @@
 <template>
-    <div class="project-root">
+    <div class="root">
 
-        <app-header></app-header>
+        <!-- <app-header></app-header> -->
         <h1>Projects</h1>
         <main>
           <div class="card" v-for="project in projects" v-if="project.showProject">
@@ -21,18 +21,14 @@
             </div> -->
 
         <!-- </div> -->
-        <app-mobile></app-mobile>
     </div>
 </template>
 
 <script>
-import Header from './Header'
-import MobileMenu from './MobileMenu'
+// import Header from './Header'
+// import MobileMenu from './MobileMenu'
 export default {
-    components: {
-        'app-header': Header,
-        'app-mobile': MobileMenu
-    },
+
     data() {
         return {
             projects: {},
@@ -66,7 +62,9 @@ html{
 
   height: 100vh;
 }
-
+.project-root{
+  margin-bottom: 100px;
+}
 // @media screen and (max-width: 500px) {
 //     .project-container {
 

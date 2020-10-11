@@ -15,10 +15,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.mobile-menu{
-  display: none;
-}
-  @media screen and (max-width: 500px) {
 
     .mobile-menu {
         display:flex;
@@ -29,7 +25,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        height: 120px;
+        height: 10%;
         background-color: #0C1B33;
         color: #fff;
 
@@ -38,5 +34,5 @@ export default {
 
         font-size: 2em;
     }
-    }
+
 </style>
