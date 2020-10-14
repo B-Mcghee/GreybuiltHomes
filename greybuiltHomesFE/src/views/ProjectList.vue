@@ -1,19 +1,29 @@
 <template>
     <div class="root">
-
+      <div class="project-list" :class="{'project-list_selected': !!selected }">
+        <ul :style="{width: `${projects.length * 100}%`}">
+          <li
+          v-for="project in projects"
+          :key = "project.id"
+          :style = "{ transform: `translate3d({-currentIndex*100}%, 0, 0)` }">
+            <project
+            :card = "card"
+            :selected = "selected && selected.project === project"
+            @select = "selectProject" />
+          </li>
+        </ul>
+      </div>
         <!-- <app-header></app-header> -->
-        <h1>Projects</h1>
+        <!-- <h1>Projects</h1>
         <main>
           <div class="card" v-for="project in projects" v-if="project.showProject">
             <div class="info" >
               <strong>Title</strong>
             </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, facilis. Iure, labore ex corporis iste minima suscipit accusamus harum facilis ad architecto quas officia. Eligendi dicta possimus iure autem rem.
-             </p>
             <img :src="project.images">
 
           </div>
-        </main>
+        </main> -->
         <!-- <div class="project-container">
 
             <!-- <div class="project" v-for="project in projects" v-if="project.showProject">
@@ -27,6 +37,8 @@
 <script>
 // import Header from './Header'
 // import MobileMenu from './MobileMenu'
+import Project from '../components/Project.vue'
+import {mapState, mapMutations} from 'vuex'
 export default {
 
     data() {
@@ -35,21 +47,28 @@ export default {
 
         }
     },
+    components: {
+      Project
+    },
     computed: {
-        sortedProjects() {
-            if (this.projects.length > 0) {
+      ...mapState(['projects', 'selected', 'currentIndex'])
+        // sortedProjects() {
+        //     if (this.projects.length > 0) {
 
-            };;
-        }
+        //     };;
+        // }
+    },
+    methods:{
+      ...mapMutations(['prevProject', 'nextProject','selectCard'])
     }
 
 
     ,
     created: function() {
-        axios.get('/static/projects.json').then(response => {
-            this.projects = response.data.projects;
-            console.log(this.projects);
-        });
+        // axios.get('/static/projects.json').then(response => {
+        //     this.projects = response.data.projects;
+        //     console.log(this.projects);
+        // });
     }
 }
 </script>
@@ -101,14 +120,43 @@ html{
 // }
 main{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  column-gap: 1em;
+  row-gap: 1em;
 
   .card{
     img{
       max-height: 300px;
       max-width: 100%;
+      border-radius: 1.5em;
+
     }
   }
   }
 
+@media screen and (max-width: 759px){
+  .root{
+    text-align: center;
+
+  }
+  .project-list{
+    margin:30px;
+    height: 496px;
+    transform:scaleX(1);
+    transition: all 0.6s ease;
+
+    ul{
+      display: flex;
+      height: 100%;
+    }
+    li{
+      flex: 1;
+      transition: all 0.6s ease;
+    }
+  }
+
+  .project-list_selected{
+    transform: scaleX(1.1);
+  }
+}
 </style>

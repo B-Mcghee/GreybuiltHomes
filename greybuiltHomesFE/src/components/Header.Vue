@@ -86,8 +86,7 @@ $background: #0C1B33;
 
 .banner-container {
     width: 100%;
-    position: fixed;
-    top: 0;
+
     height:15%;
     background-color: $background;
     .banner-box {
@@ -173,7 +172,7 @@ a:hover::before {
         padding: 0px;
 
         .image-path{
-          max-width: 5em;
+          max-width: 7em;
         }
     }
 

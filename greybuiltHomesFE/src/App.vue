@@ -72,7 +72,6 @@ body {
     padding: 0;
 }
 .root{
-  margin-bottom: 20%;
-  margin-top: 20%;
+margin: 0% 5% 10% 5%
 }
 </style>
