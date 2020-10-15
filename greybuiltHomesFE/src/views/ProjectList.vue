@@ -1,21 +1,14 @@
 <template>
     <div class="root">
-      <div class="project-list" :class="{'project-list_selected': !!selected }">
-        <ul :style="{width: `${projects.length * 100}%`}">
-          <li
-          v-for="project in projects"
-          :key = "project.id"
-          :style = "{ transform: `translate3d({-currentIndex*100}%, 0, 0)` }">
-            <project
-            :card = "card"
-            :selected = "selected && selected.project === project"
-            @select = "selectProject" />
-          </li>
-        </ul>
-      </div>
+
         <!-- <app-header></app-header> -->
-        <!-- <h1>Projects</h1>
-        <main>
+        <h1>Projects</h1>
+        <div class="projects">
+          <div class="project" v-for="project in allProjects" :key="project.id">
+            {{project.title}}
+          </div>
+        </div>
+        <!-- <main>
           <div class="card" v-for="project in projects" v-if="project.showProject">
             <div class="info" >
               <strong>Title</strong>
@@ -26,19 +19,19 @@
         </main> -->
         <!-- <div class="project-container">
 
-            <!-- <div class="project" v-for="project in projects" v-if="project.showProject">
+          <div class="project" v-for="project in projects" v-if="project.showProject">
                 <img :src="project.images" alt="">
-            </div> -->
+            </div>
 
-        <!-- </div> -->
+        </div> -->
     </div>
 </template>
 
 <script>
 // import Header from './Header'
 // import MobileMenu from './MobileMenu'
-import Project from '../components/Project.vue'
-import {mapState, mapMutations} from 'vuex'
+import Project from '../components/Project.vue';
+import { mapGetters } from 'vuex';
 export default {
 
     data() {
@@ -50,17 +43,12 @@ export default {
     components: {
       Project
     },
-    computed: {
-      ...mapState(['projects', 'selected', 'currentIndex'])
+    computed: mapGetters(['allProjects'])
         // sortedProjects() {
         //     if (this.projects.length > 0) {
 
         //     };;
         // }
-    },
-    methods:{
-      ...mapMutations(['prevProject', 'nextProject','selectCard'])
-    }
 
 
     ,
