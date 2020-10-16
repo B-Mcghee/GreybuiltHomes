@@ -3,9 +3,11 @@
 
         <!-- <app-header></app-header> -->
         <h1>Projects</h1>
+          <AddProject/>
         <div class="projects">
-          <div class="project" v-for="project in allProjects" :key="project.id">
-            {{project.title}}
+
+          <div class="project" v-for="project in allProjects" :key="project.project_id">
+            <h2>{{project.title}}</h2>
           </div>
         </div>
         <!-- <main>
@@ -31,7 +33,8 @@
 // import Header from './Header'
 // import MobileMenu from './MobileMenu'
 import Project from '../components/Project.vue';
-import { mapGetters } from 'vuex';
+import AddProject from '../components/Project/AddProject'
+import { mapGetters , mapActions} from 'vuex';
 export default {
 
     data() {
@@ -41,7 +44,11 @@ export default {
         }
     },
     components: {
-      Project
+      Project,
+      AddProject
+    },
+    methods:{
+      ...mapActions(['fetchProjects'])
     },
     computed: mapGetters(['allProjects'])
         // sortedProjects() {
@@ -52,7 +59,8 @@ export default {
 
 
     ,
-    created: function() {
+    created() {
+      this.fetchProjects();
         // axios.get('/static/projects.json').then(response => {
         //     this.projects = response.data.projects;
         //     console.log(this.projects);
@@ -127,24 +135,21 @@ main{
     text-align: center;
 
   }
-  .project-list{
-    margin:30px;
-    height: 496px;
-    transform:scaleX(1);
-    transition: all 0.6s ease;
+  .projects{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5%;
+    row-gap: 10%;
+  }
+  .project{
+    background-color: gray;
+    height:100px;
+    border-radius: 1.5em;
+    padding: 10px 5px;
 
-    ul{
-      display: flex;
-      height: 100%;
-    }
-    li{
-      flex: 1;
-      transition: all 0.6s ease;
-    }
+
   }
 
-  .project-list_selected{
-    transform: scaleX(1.1);
-  }
+
 }
 </style>
