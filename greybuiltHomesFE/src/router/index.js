@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Bio from '../views/Bio.vue'
+import BioList from '../views/BioList.vue'
 import ProjectList from '../views/ProjectList.vue'
 import Contact from '../views/Contact.vue'
 import Testimonial from '../views/Testimonial.vue'
@@ -28,7 +28,7 @@ export default new Router({
     {
       path: '/about',
       name: 'About',
-      component: () => { return import ('../views/Bio.vue')}
+      component: () => { return import ('../views/BioList.vue')}
     },
     {
       path: '/projects',

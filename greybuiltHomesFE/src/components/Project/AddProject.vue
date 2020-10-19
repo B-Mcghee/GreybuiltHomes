@@ -1,23 +1,10 @@
 <template>
-  <div>
-    <h3>add project</h3>
-    <div class="add">
-      <form action="">
-
-        <input v-model="title" type="text" placeholder="Add Project Title"/>
-        <input type="submit">
-      </form>
-    </div>
-  </div>
+<h2>Add Project</h2>
 </template>
 
 <script>
 export default {
-  data(){
-    return {
-      title: ''
-    }
-  }
+
 }
 </script>
 

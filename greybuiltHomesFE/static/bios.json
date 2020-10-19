@@ -1,0 +1,23 @@
+{
+  "bios": [
+    {
+      "BioId": 1,
+      "FirstName": "Aaron",
+      "LastName": "Witt",
+      "Position": "Owner",
+      "Description": "We are a family owned business in Southern Indiana striving to build exceptional custom homes for our customers.",
+      "Image": "/static/Images/aaron_family.jpg"
+
+    },
+    {
+      "BioId": 2,
+      "FirstName": "Bilal",
+      "LastName": "Powell",
+      "Position": "Owner",
+      "Description": "We are a family owned business in Southern Indiana striving to build exceptional custom homes for our customers.",
+      "Image": "/static/Images/Bilal_family.png"
+
+    }
+
+  ]
+}

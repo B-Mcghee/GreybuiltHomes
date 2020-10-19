@@ -22,14 +22,19 @@ const state = {
 };
 
 const getters = {
-  allProjects : (state) => state.projects
+  allProjects : state => state.projects
 };
 
 const actions = {
-   fetchProjects({ commit }){
-    const response = axios.get('../static/projects.json').then(response => {
-            commit('setProjects',response.data);
-        })
+   async fetchProjects({ commit }){
+    const response = await axios.get('../static/projects.json')
+    .then(response => {
+      console.log('setProjects',response.data.projects);
+      commit('setProjects', response.data.projects);
+
+  });
+    // console.log('setProjects',response.data)
+
   }
 
 
