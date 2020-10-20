@@ -3,11 +3,12 @@
 
         <!-- <app-header></app-header> -->
         <h1>Projects</h1>
-
-
-        <stored-projects :projects = "allProjects" >
-
-        </stored-projects>
+      <!-- <base-card>
+        <base-button @click="setTab('stored-projects')">Projects</base-button>
+        <base-button @click="setTab('add-project')">Add Project</base-button>
+      </base-card> -->
+      <component :is="selectedTab"></component>
+        <!-- <stored-projects :projects = "allProjects"></stored-projects> -->
     </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
 
     data() {
         return {
-            selectedTab: 'ProjectList'
+            selectedTab: 'stored-projects',
+            storedProjects:[]
         };
     },
     components: {
@@ -29,13 +31,22 @@ export default {
     },
     methods: {
         ...mapActions(['fetchProjects']),
-        setSelected(tab) {
+        setTab(tab) {
             this.selectedTab = tab;
         }
     },
-    computed: mapGetters(['allProjects']) ,
+    computed: {
+      ...mapGetters(['allProjects']),
+
+       },
     created() {
         this.fetchProjects();
+    },
+    provide()
+    {
+      return{
+        projects: this.allProjects
+      }
     }
 }
 </script>

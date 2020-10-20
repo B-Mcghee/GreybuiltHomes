@@ -2,11 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+
 import router from './router'
 import store from './store';
 import BaseCard from './components/UI/BaseCard.vue'
 import BaseInput from './components/UI/BaseInput.vue'
 import BaseButton from './components/UI/BaseButton.vue'
+
+const app = createApp(App);
+
 
 Vue.config.productionTip = false
 Vue.component('base-card',BaseCard);

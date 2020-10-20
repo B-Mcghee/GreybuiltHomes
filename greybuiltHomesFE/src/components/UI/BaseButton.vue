@@ -1,12 +1,12 @@
 <template>
-  <button>
+  <button :type = "type" :class = "mode">
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-
+props:['type', 'mode'],
 data(){
   return
   {
@@ -14,9 +14,7 @@ data(){
   }
 },
     methods: {
-      info(){
-        this.show = !this.show;
-      }
+
     }
 }
 </script>

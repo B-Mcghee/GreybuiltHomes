@@ -15,7 +15,7 @@
 import Project from './Project'
 export default {
 
-    props: ['projects'],
+    inject: ['projects'],
     components:{
       Project
     }
