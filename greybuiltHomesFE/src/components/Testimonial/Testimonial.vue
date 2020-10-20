@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{testimonial.name}}</h1><span>{{testimonial.rating}}</span>
+    <h1>{{testimonial.Name}}</h1><span>{{testimonial.rating}}</span>
     <p>{{testimonial.description}}</p>
   </div>
 </template>

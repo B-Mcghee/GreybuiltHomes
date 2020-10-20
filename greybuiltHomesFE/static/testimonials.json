@@ -3,26 +3,26 @@
     {
       "testimonial_id": 1,
       "Name": "John Smith",
-      "description": "I loved everything about Greybuilt, they really were down to earth",
-      "rating": 5
+      "Description": "I loved everything about Greybuilt, they really were down to earth",
+      "Rating": 5
     },
     {
       "testimonial_id": 2,
       "Name": "Bob",
-      "description": "I loved everything about Greybuilt, they really were down to earth",
-      "rating": 5
+      "Description": "I loved everything about Greybuilt, they really were down to earth",
+      "Rating": 5
     },
     {
       "testimonial_id": 3,
       "Name": "Mary Sue",
-      "description": "I loved everything about Greybuilt, they really were down to earth",
-      "rating": 5
+      "Description": "I loved everything about Greybuilt, they really were down to earth",
+      "Rating": 5
     },
     {
       "testimonial_id": 4,
       "Name": "Lisa",
       "description": "I loved everything about Greybuilt, they really were down to earth",
-      "rating": 5
+      "Rating": 5
     }
   ]
 }

@@ -7,7 +7,7 @@ const state = {
 };
 
 const getters = {
-  alltestimonials : state => state.testimonials
+  allTestimonials : state => state.testimonials
 };
 
 const actions = {

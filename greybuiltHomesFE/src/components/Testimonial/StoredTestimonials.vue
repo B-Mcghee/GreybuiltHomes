@@ -2,7 +2,7 @@
   <div>
             <div class="testimonials" v-for="testimonial in testimonials" :key="testimonial.testimonial_id">
             <base-card>
-                <testimonial :testimonial = testimonial>
+                <testimonial :testimonial = "testimonial">
 
                 </testimonial>
 
@@ -12,8 +12,13 @@
 </template>
 
 <script>
-export default {
+import Testimonial from './Testimonial'
 
+export default {
+props:['testimonials'],
+components:{
+  Testimonial
+}
 }
 </script>
 
