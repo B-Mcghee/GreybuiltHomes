@@ -3,6 +3,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import projects from './modules/projects';
 import bios from './modules/bios'
+import testimonials from './modules/testimonials'
 
 //Load Vuex
 Vue.use(Vuex);
@@ -11,6 +12,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   modules:{
     projects,
-    bios
+    bios,
+    testimonials
   }
 });

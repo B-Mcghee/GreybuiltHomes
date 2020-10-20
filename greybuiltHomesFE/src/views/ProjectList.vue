@@ -1,16 +1,8 @@
 <template>
     <div class="root">
 
-        <!-- <app-header></app-header> -->
         <h1>Projects</h1>
-        <stored-projects></stored-projects>
-        <!-- <base-card>
-            <base-button @click.native="setTab('stored-projects')" :mode="storedButton">Projects</base-button>
-            <base-button @click.native="setTab('add-project')" :mode="addButton">Add Project</base-button>
-
-        </base-card> -->
-        <!-- <component :is="selectedTab" ></component> -->
-        <!-- <stored-projects :projects = "allProjects"></stored-projects> -->
+        <stored-projects :projects = allProjects></stored-projects>
     </div>
 </template>
 
@@ -20,11 +12,7 @@ import StoredProjects from '../components/Project/StoredProjects';
 import { mapGetters, mapActions } from 'vuex';
 export default {
     name: "Projects",
-    data() {
-        return {
-            projects: this.allProjects,
-        }
-    },
+
     components: {
         StoredProjects,
         AddProject
@@ -32,43 +20,15 @@ export default {
     },
     methods: {
 
-
-        ...mapActions(['fetchProjects']),
-        // setTab(tab) {
-        //     return this.selectedTab = tab;
-        // },
+  ...mapActions(['fetchProjects']),
 
     },
     computed: {
         ...mapGetters(['allProjects']),
-        // storedButton() {
-        //     return this.selectedTab === 'stored-projects' ? null : 'flat';
-        // },
-        // addButton() {
-        //     return this.selectedTab === 'add-project' ? null : 'flat';
-        // },
-
-
-
     },
     created() {
-
         this.fetchProjects();
-    },
-    watch:{
-      projects: function(val){
-        console.log(val);
-
-      }
-    },
-    provide()
-    {
-      return{
-        projects: this.projects
-      }
     }
-
-
 }
 </script>
 

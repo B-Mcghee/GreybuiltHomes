@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import BioList from '../views/BioList.vue'
 import ProjectList from '../views/ProjectList.vue'
 import Contact from '../views/Contact.vue'
-import Testimonial from '../views/Testimonial.vue'
+import TestimonialList from '../views/TestimonialList.vue'
 import Example from '@/components/Example'
 import Calendar from '@/components/Calendar'
 import Main from '@/components/Main'
@@ -44,7 +44,7 @@ export default new Router({
     {
       path: '/testimonials',
       name: 'Testimonial',
-      component: () => { return import ('../views/Testimonial.vue')}
+      component: () => { return import ('../views/TestimonialList.vue')}
 
     },
     {
