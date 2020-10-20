@@ -2,22 +2,7 @@ import axios from 'axios';
 
 const state = {
   projects: [
-    // {
-    //   id: 1,
-    //   title: 'Project one'
-    // },
-    // {
-    //   id: 2,
-    //   title: 'Project two'
-    // },
-    // {
-    //   id: 3,
-    //   title: 'Project three'
-    // },
-    // {
-    //   id: 4,
-    //   title: 'Project four'
-    // }
+
   ]
 };
 
@@ -29,7 +14,7 @@ const actions = {
    async fetchProjects({ commit }){
     const response = await axios.get('../static/projects.json')
     .then(response => {
-      console.log('setProjects',response.data.projects);
+
       commit('setProjects', response.data.projects);
 
   });

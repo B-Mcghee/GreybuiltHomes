@@ -8,6 +8,7 @@ import Testimonial from '../views/Testimonial.vue'
 import Example from '@/components/Example'
 import Calendar from '@/components/Calendar'
 import Main from '@/components/Main'
+import StoredProjects from '../store/modules/projects'
 
 
 

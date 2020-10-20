@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div class="projects" v-for="project in projects" :key="project.project_id">
             <base-card>
                 <project :projectImage="project.image" :title="project.title" :show="project.showProject">

@@ -3,11 +3,13 @@
 
         <!-- <app-header></app-header> -->
         <h1>Projects</h1>
-      <!-- <base-card>
-        <base-button @click="setTab('stored-projects')">Projects</base-button>
-        <base-button @click="setTab('add-project')">Add Project</base-button>
-      </base-card> -->
-      <component :is="selectedTab"></component>
+        <stored-projects></stored-projects>
+        <!-- <base-card>
+            <base-button @click.native="setTab('stored-projects')" :mode="storedButton">Projects</base-button>
+            <base-button @click.native="setTab('add-project')" :mode="addButton">Add Project</base-button>
+
+        </base-card> -->
+        <!-- <component :is="selectedTab" ></component> -->
         <!-- <stored-projects :projects = "allProjects"></stored-projects> -->
     </div>
 </template>
@@ -17,12 +19,11 @@ import AddProject from '../components/Project/AddProject';
 import StoredProjects from '../components/Project/StoredProjects';
 import { mapGetters, mapActions } from 'vuex';
 export default {
-
+    name: "Projects",
     data() {
         return {
-            selectedTab: 'stored-projects',
-            storedProjects:[]
-        };
+            projects: this.allProjects,
+        }
     },
     components: {
         StoredProjects,
@@ -30,24 +31,44 @@ export default {
 
     },
     methods: {
+
+
         ...mapActions(['fetchProjects']),
-        setTab(tab) {
-            this.selectedTab = tab;
-        }
+        // setTab(tab) {
+        //     return this.selectedTab = tab;
+        // },
+
     },
     computed: {
-      ...mapGetters(['allProjects']),
+        ...mapGetters(['allProjects']),
+        // storedButton() {
+        //     return this.selectedTab === 'stored-projects' ? null : 'flat';
+        // },
+        // addButton() {
+        //     return this.selectedTab === 'add-project' ? null : 'flat';
+        // },
 
-       },
+
+
+    },
     created() {
+
         this.fetchProjects();
+    },
+    watch:{
+      projects: function(val){
+        console.log(val);
+
+      }
     },
     provide()
     {
       return{
-        projects: this.allProjects
+        projects: this.projects
       }
     }
+
+
 }
 </script>
 

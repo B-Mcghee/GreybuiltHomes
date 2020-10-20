@@ -1,10 +1,14 @@
 <template>
-<h2>Add Project</h2>
+<div>
+  <h2>Add Project</h2>
+<p>{{projects}}</p>
+</div>
+
 </template>
 
 <script>
 export default {
-
+inject: ['projects']
 }
 </script>
 

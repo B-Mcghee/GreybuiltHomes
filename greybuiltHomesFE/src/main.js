@@ -9,14 +9,12 @@ import BaseCard from './components/UI/BaseCard.vue'
 import BaseInput from './components/UI/BaseInput.vue'
 import BaseButton from './components/UI/BaseButton.vue'
 
-const app = createApp(App);
 
 
 Vue.config.productionTip = false
 Vue.component('base-card',BaseCard);
 Vue.component('base-input',BaseInput);
 Vue.component('base-button', BaseButton);
-// const app = CreateApp(App);
 
 // app.component('base-card', BaseCard);
 /* eslint-disable no-new */

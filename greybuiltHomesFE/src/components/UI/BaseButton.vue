@@ -1,5 +1,5 @@
 <template>
-  <button :type = "type" :class = "mode">
+  <button  :type = 'type' :class = mode>
     <slot></slot>
   </button>
 </template>
@@ -7,15 +7,7 @@
 <script>
 export default {
 props:['type', 'mode'],
-data(){
-  return
-  {
-    show:true
-  }
-},
-    methods: {
 
-    }
 }
 </script>
 
@@ -42,4 +34,15 @@ $backgroundHover: #1d3e72;
      background-color: $backgroundHover ;
      border-color: $backgroundHover;
     }
+
+    .flat {
+  background-color: transparent;
+  color: $background;
+  border: none;
+}
+
+.flat:hover,
+.flat:active {
+  background-color: $backgroundHover;
+}
 </style>
