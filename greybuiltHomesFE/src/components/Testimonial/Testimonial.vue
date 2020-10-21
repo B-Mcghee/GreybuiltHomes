@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{testimonial.Name}}</h1><span>{{testimonial.rating}}</span>
-    <p>{{testimonial.description}}</p>
+    <h1>{{testimonial.Name}}</h1><span>{{testimonial.Rating}}</span>
+    <p>{{testimonial.Description}}</p>
   </div>
 </template>
 

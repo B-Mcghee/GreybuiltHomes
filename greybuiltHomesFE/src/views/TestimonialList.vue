@@ -1,7 +1,7 @@
 <template>
     <div class="root">
 
-        <h1>testimonials</h1>
+        <h1>Testimonials</h1>
         <stored-testimonials :testimonials = allTestimonials></stored-testimonials>
     </div>
 </template>
@@ -87,6 +87,7 @@ main {
 
 @media screen and (max-width: 759px) {
     .root {
+        margin-bottom: 100px;
         text-align: center;
     }
     .testimonials {}

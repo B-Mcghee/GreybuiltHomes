@@ -4,57 +4,35 @@
         <div class="content">
             <h2>Contact us</h2>
             <base-card>
-            <div class="form-container">
-                <div class="personal-info" v-if="show">
-                  <base-input>
-                    <label for="">First Name</label>
-                    <input type="text">
-                    <label for="">Last Name</label>
-                    <input type="text">
-                  </base-input>
-                  <div class="form-interest">
-                    <label for="">Interested In?</label>
-                    <select name="" id="">
-                    <option value="type" v-for="type in interests" :key="type.index">{{type}}</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="">Description</label>
-                    <input type="textarea">
-                  </div>
-                  <div>
-                    <button @click="info()">click</button>
-                    <base-button  @click="info()">
-                      Next
-                    </base-button>
-
-                  </div>
+                <div class="form-group">
+                    <div class="first-name form-control">
+                        <label for="">First Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="last-name form-control ">
+                        <label for="">Last Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="email form-control">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="">
+                    </div>
+                    <div class="phone-number form-control">
+                        <label for="number">Phone Number</label>
+                        <input type="number">
+                    </div>
+                    <div class="schedule-call form-control">
+                        <label for="">Schedule Call</label>
+                        <input type="datetime-local">
+                    </div>
+                    <div class="submit">
+                      <input type="submit">
+                    </div>
                 </div>
-                <div class="personal-info" v-else>
-                  <div>
-                    <label for="">Email</label>
-                    <input type="email">
-                    <label for="">Phone Number</label>
-                    <input type="number">
-                  </div>
-                  <div>
-                    <label for="">Schedule Date</label>
-                      <input type="datetime-local">
-                  </div>
-                  <div>
-                    <label for="">Time</label>
-                    <input type="time">
-                  </div>
-                  <div>
 
-                    <base-button  @click="info()">
-                      Confirm
-                    </base-button>
 
-                  </div>
-                </div>
-            </div>
-      </base-card>
+
+            </base-card>
 
         </div>
 
@@ -67,14 +45,22 @@ export default {
     data() {
         return {
             show: true,
-            interests: ['Building a House', 'Other']
+            interests: ['Building a House', 'Other'],
+            contact: {
+                FirstName: '',
+                LastName: '',
+                Email: '',
+                PhoneNumber: '',
+                Appointment: ''
+
+            }
         }
     },
     methods: {
-      info(){
-        this.show = !this.show;
-      }
-    }//,
+        info() {
+            this.show = !this.show;
+        }
+    } //,
     // components: { 'app-header': Header }
 }
 </script>
@@ -84,7 +70,6 @@ $container: #B3B6B7;
 $shadowGrey: #54595f;
 $background: #0C1B33;
 .form-container {
-    width: 600px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 100%;
@@ -111,7 +96,6 @@ $background: #0C1B33;
 //     border: 1px solid #DDDDDD;
 //     width: 75%;
 // }
-
 // input:focus {
 //     box-shadow: 0 0 5px $background;
 //     padding: 6px 0px 6px 3px;
@@ -119,7 +103,6 @@ $background: #0C1B33;
 //     border: 1px solid $background;
 //     background-color: $container;
 // }
-
 .input-button {
     background-color: $background;
     margin-top: 5%;
@@ -156,8 +139,7 @@ $background: #0C1B33;
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: auto auto auto auto auto auto;
-    }
-    // input {
+    } // input {
     //     cursor: vertical-text;
     //     border-radius: 5px;
     //     -webkit-transition: all 0.30s ease-in-out;
@@ -204,23 +186,40 @@ $background: #0C1B33;
     }
 }
 
-@media screen and (max-width: 500px) {
-  .form-interest{
-    display: flex;
-    flex-direction: row;
-    justify-items: space-around;
-    justify-content: space-evenly;
-    max-width: 300px;
-  }
-    .content {
-        border-radius: 15px;
-        padding: 10px 0px;
-        margin: 20px auto;
-        height: auto;
-        width: 96vw;
+@media screen and (max-width: 1100px) {
+    .form-group {
+        display: grid;
     }
-    label {
-        display: block;
+    .first-name {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+    .last-name {
+        grid-column: 2/ span 1;
+        grid-row: 1 / span 1;
+    }
+    .email {
+        grid-column: 1/ span 2;
+        grid-row: 2
+    }
+    .phone-number {
+        grid-column: 1/ span 2;
+        grid-row: 3
+    }
+    .schedule-call {
+        grid-column: 1/ span 2;
+        grid-row: 4
+    }
+    .submit{
+              grid-column: 1/ span 2;
+
+      grid-row: 5;
+    }
+    .form-control{
+      display: grid;
+      grid-auto-columns: 1;
+      grid-auto-columns: 100% 100%;
+
     }
     .form-container {
         width: 360px;
