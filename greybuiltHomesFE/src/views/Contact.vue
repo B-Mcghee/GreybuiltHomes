@@ -1,49 +1,53 @@
 <template>
-    <div class="root">
+<div class="root">
 
         <div class="content">
             <h2>Contact us</h2>
             <base-card>
                 <div class="form-group">
-                    <div class="first-name form-control">
-                        <label for="">First Name</label>
-                        <input type="text">
-                    </div>
-                    <div class="last-name form-control ">
-                        <label for="">Last Name</label>
-                        <input type="text">
+                    <div class="name form-control">
+                        <label for="">Name</label>
+                        <base-input type="text" />
                     </div>
                     <div class="email form-control">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="">
+                        <base-input type="email" name="email" id="" />
                     </div>
                     <div class="phone-number form-control">
                         <label for="number">Phone Number</label>
-                        <input type="number">
+                        <base-input type="number" />
                     </div>
                     <div class="schedule-call form-control">
                         <label for="">Schedule Call</label>
-                        <input type="datetime-local">
+                        <!-- <div class="flex mb-2">
+                            <label class="text-gray-600 font-medium"><input class="mr-1" type="radio" value="" v-model="timezone">Local</label>
+                            <label class="text-gray-600 font-medium ml-3"><input class="mr-1" type="radio" value="utc" v-model="timezone">UTC</label>
+                        </div>
+                        <v-date-picker v-model="date" mode="multiple" /> -->
+
                     </div>
+
                     <div class="submit">
-                      <input type="submit">
+                        <base-input type="submit" />
                     </div>
                 </div>
 
 
 
             </base-card>
-
         </div>
 
     </div>
 </template>
 
 <script>
-// import Header from '@/components/Header'
+import VDatePicker from 'v-calendar/lib/components/date-picker.umd';
+import DatePicker from 'vue2-datepicker';
+
 export default {
     data() {
         return {
+            date: '',
             show: true,
             interests: ['Building a House', 'Other'],
             contact: {
@@ -53,15 +57,19 @@ export default {
                 PhoneNumber: '',
                 Appointment: ''
 
-            }
+            },
+            timezone: '',
         }
+    },
+    components: {
+        VDatePicker,
+        DatePicker
     },
     methods: {
         info() {
             this.show = !this.show;
         }
-    } //,
-    // components: { 'app-header': Header }
+    }
 }
 </script>
 
@@ -187,46 +195,15 @@ $background: #0C1B33;
 }
 
 @media screen and (max-width: 1100px) {
-    .form-group {
-        display: grid;
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 0.5rem;
     }
-    .first-name {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-    }
-    .last-name {
-        grid-column: 2/ span 1;
-        grid-row: 1 / span 1;
-    }
-    .email {
-        grid-column: 1/ span 2;
-        grid-row: 2
-    }
-    .phone-number {
-        grid-column: 1/ span 2;
-        grid-row: 3
-    }
-    .schedule-call {
-        grid-column: 1/ span 2;
-        grid-row: 4
-    }
-    .submit{
-              grid-column: 1/ span 2;
-
-      grid-row: 5;
-    }
-    .form-control{
-      display: grid;
-      grid-auto-columns: 1;
-      grid-auto-columns: 100% 100%;
-
-    }
-    .form-container {
-        width: 360px;
-        margin: 15px auto;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto auto auto auto auto;
+    input {
+        display: block;
+        width: 100%;
+        padding: 0.15rem;
     }
 }
 </style>

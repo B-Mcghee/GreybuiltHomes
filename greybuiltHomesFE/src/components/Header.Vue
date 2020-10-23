@@ -20,7 +20,9 @@
         </nav>
     </div>
     <app-menu v-if="mobilemenu"></app-menu>
-
+    <div @click = "openModal()" class="icon">
+      <i class="fas fa-bars"></i>
+    </div>
   </div>
 
 </template>
@@ -86,7 +88,6 @@ $background: #0C1B33;
 
 .banner-container {
     width: 100%;
-
     height:15%;
     background-color: $background;
     .banner-box {
@@ -175,7 +176,19 @@ a:hover::before {
           max-width: 7em;
         }
     }
+  .icon{
 
+    display: inline-block;
+    background-color: $background;
+    color: #fff;
+    padding: .5rem .75rem;
+    font-size: 2.5em;
+    border-radius: .25em;
+    position: fixed;
+    bottom: .25em;
+    left:.25em;
+    cursor: pointer;
+  }
 
 }
 </style>

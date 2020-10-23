@@ -1,16 +1,14 @@
 <template>
-  <div class="style-input">
-    <slot></slot>
-  </div>
+  <input :type="type">
 </template>
 
 <script>
 export default {
-
+props:['type']
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $container: #B3B6B7;
 $shadowGrey: #54595f;
 $background: #0C1B33;
@@ -20,6 +18,9 @@ $background: #0C1B33;
   }
   input {
     cursor: text;
+    display: block;
+    width: 100%;
+    padding: 0.15rem;
     border-radius: 10px;
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
