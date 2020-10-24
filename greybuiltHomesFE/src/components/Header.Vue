@@ -50,7 +50,7 @@ export default {
 
         this.windowWidth = document.documentElement.clientWidth;
 
-        if(this.windowWidth < 759){
+        if(this.windowWidth < 770){
           this.mobilemenu = true;
         }
         else{
@@ -144,7 +144,7 @@ a:hover::before {
 //     }
 // }
 
-@media screen and (max-width: 759px) {
+@media screen and (max-width: 770px) {
 
   //   .mobile-menu {
     //       display: flex;

@@ -9,7 +9,11 @@
               hoverBackground="#999"
 
             ></app-main> -->
-        <app-header :nav-links="navLinks" :image-path="require('../static/Images/logo.png')"></app-header>
+            <navigation
+            :nav-links="navLinks"
+            :image-path="require('../static/Images/logo.png')"
+            	linkColor="#777" />
+        <!-- <app-header :nav-links="navLinks" :image-path="require('../static/Images/logo.png')"></app-header> -->
         <router-view/>
     </div>
 </template>
@@ -17,12 +21,13 @@
 <script>
 import Main from '@/components/Main'
 import Header from '@/components/Header'
-
+import Navigation from '@/components/Navigation/Navigation'
 export default {
     name: 'App',
     components: {
         'app-main': Main,
-        'app-header': Header
+        'app-header': Header,
+        Navigation
     },
     data: () => ({
 
@@ -59,6 +64,12 @@ export default {
 </script>
 
 <style>
+figure {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 10px;
+	margin-inline-end: 0;
+}
 #app {
     font-family: 'Libre Franklin', 'Raleway', 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

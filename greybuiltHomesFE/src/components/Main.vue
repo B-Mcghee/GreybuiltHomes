@@ -64,7 +64,7 @@ export default {
   }
   }
 
-  @media screen and (max-width: 759px){
+  @media screen and (max-width: 770px){
     nav {
 
 
