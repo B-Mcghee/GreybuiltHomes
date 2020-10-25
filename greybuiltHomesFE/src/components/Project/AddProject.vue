@@ -13,9 +13,9 @@ inject: ['projects']
 </script>
 
 <style lang="scss" scoped>
-$container: #B3B6B7;
+$primary: rgb(148,148,148);
 $shadowGrey: #54595f;
-$background: #0C1B33;
+$secondary: rgb(18,39,68);
 
   .add{
     margin: 25px 0px;
@@ -27,14 +27,14 @@ $background: #0C1B33;
     input[type="text"]{
     flex:10;
     padding: 10px;
-    border: 1px solid $background;
+    border: 1px solid $secondary;
     outline: 0;
     }
 
     input[type="submit"]{
-      background: $background;
+      background: $secondary;
       color: #fff;
-      border: 1px solid $background;
+      border: 1px solid $secondary;
       cursor: pointer;
     }
     }

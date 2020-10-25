@@ -12,17 +12,17 @@ props:['type', 'mode'],
 </script>
 
 <style lang="scss" scoped>
-$container: #B3B6B7;
+$primary: rgb(148,148,148);
 $shadowGrey: #54595f;
-$background: #0C1B33;
-$backgroundHover: #1d3e72;
+$secondary: rgb(18,39,68);
+$secondaryHover: #1d3e72;
 
   button{
     border-radius: 1.0rem;
     padding: 0.75rem 1.5rem;
     font-family: inherit;
-    background-color: $background;
-    border: 1px solid $background;
+    background-color: $secondary;
+    border: 1px solid $secondary;
     color: white;
     cursor: pointer;
 
@@ -31,18 +31,18 @@ $backgroundHover: #1d3e72;
 
       button:hover,
     button:active {
-     background-color: $backgroundHover ;
-     border-color: $backgroundHover;
+     background-color: $secondaryHover ;
+     border-color: $secondaryHover;
     }
 
     .flat {
   background-color: transparent;
-  color: $background;
+  color: $secondary;
   border: none;
 }
 
 .flat:hover,
 .flat:active {
-  background-color: $backgroundHover;
+  background-color: $secondaryHover;
 }
 </style>

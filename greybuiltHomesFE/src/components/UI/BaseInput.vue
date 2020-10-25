@@ -9,17 +9,14 @@ props:['type']
 </script>
 
 <style lang="scss" scoped>
-$container: #B3B6B7;
+$primary: rgb(148,148,148);
 $shadowGrey: #54595f;
-$background: #0C1B33;
-  .style-input{
+$secondary: rgb(18,39,68);
 
-    max-width: 80%;
-  }
   input {
     cursor: text;
     display: block;
-    width: 100%;
+    max-width: 90%;
     padding: 0.15rem;
     border-radius: 10px;
     -webkit-transition: all 0.30s ease-in-out;
@@ -28,16 +25,16 @@ $background: #0C1B33;
     -o-transition: all 0.30s ease-in-out;
     outline: none;
     padding: 6px 0px 6px 3px;
-    margin: 10px 1px 6px 0px;
-    border: 1px solid #DDDDDD;
-    width: 75%;
+    margin: 15px auto;
+    border: 1px solid rgba(148,148,148, .7);
 }
 
 input:focus {
-    box-shadow: 0 0 5px $background;
+    box-shadow: 0 0 5px $secondary;
     padding: 6px 0px 6px 3px;
-    margin: 10px 1px 6px 0px;
-    border: 1px solid $background;
-    background-color: $container;
+    border: 1px solid $secondary;
+    background-color: $primary;
 }
+
+
 </style>

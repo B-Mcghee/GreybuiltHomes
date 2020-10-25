@@ -60,9 +60,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$container: #B3B6B7;
+$primary: rgb(148,148,148);
 $shadowGrey: #54595f;
-$background: #0C1B33;
+$secondary: rgb(18,39,68);
 div{
   text-align: center;
 }
@@ -70,7 +70,7 @@ div{
     display: grid;
     grid-template-columns: 30% auto;
     grid-template-rows: 40% auto;
-    background-color: $container;
+    background-color: $primary;
     min-height: 94vh;
     min-width: 96vw;
     margin-top: 3vh;
@@ -112,7 +112,7 @@ div{
     line-height: 1.5em;
   }
   .get-started{
-    background-color: $background;
+    background-color: $secondary;
     color: #fff;
     padding: 15px 20px;
     border-radius: 25px;
@@ -198,7 +198,7 @@ a::after {
     margin: 0 auto;
     height: 3px;
     width: 10%;
-    background-color: $background;
+    background-color: $secondary;
     padding-left: 2px;
     transition: 500ms ease-in;
     transform: scaleX(0);
@@ -210,12 +210,12 @@ a:hover::after {
 
 a,
 a:visited {
-    color: $background;
+    color: $secondary;
     text-decoration: none;
 }
 
 .logo {
-    background-color: $background;
+    background-color: $secondary;
     max-width: 93%;
     box-shadow: 5px 5px 10px $shadowGrey;
 }

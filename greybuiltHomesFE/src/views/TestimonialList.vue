@@ -32,9 +32,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$container: #B3B6B7;
+$primary: rgb(148,148,148);
 $shadowGrey: #54595f;
-$background: #0C1B33;
+$secondary: rgb(18,39,68);
 html {
     height: 100vh;
 }
