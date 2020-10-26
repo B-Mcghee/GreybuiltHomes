@@ -40,9 +40,6 @@ html {
     height: 100vh;
 }
 
-.project-root {
-    margin-bottom: 100px;
-}
 
 // @media screen and (max-width: 500px) {
 //     .project-container {
@@ -90,12 +87,6 @@ main {
     .root {
         text-align: center;
     }
-    .projects {}
-    // .project {
-    //     secondary-color: gray;
-    //     height: 100px;
-    //     border-radius: 1.5em;
-    //     padding: 10px 5px;
-    // }
+
 }
 </style>

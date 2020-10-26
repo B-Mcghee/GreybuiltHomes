@@ -26,12 +26,6 @@
                         </div>
                         <div class="schedule-call form-control">
                             <label for="">Schedule Call</label>
-                            <!-- <div class="flex mb-2">
-                                    <label class="text-gray-600 font-medium"><input class="mr-1" type="radio" value="" v-model="timezone">Local</label>
-                                    <label class="text-gray-600 font-medium ml-3"><input class="mr-1" type="radio" value="utc" v-model="timezone">UTC</label>
-                                </div>
-                                <v-date-picker v-model="date" mode="multiple" /> -->
-
                         </div>
 
                         <div class="submit">
@@ -91,13 +85,6 @@ $secondary: rgb(18, 39, 68);
     margin-bottom: 50px;
 }
 
-.input-div {
-    h5 {
-        margin: 4px;
-        padding: 0;
-    }
-}
-
 h2{
   margin: 25px auto;
 }
@@ -129,76 +116,9 @@ h1 {
     position: absolute;
 }
 
-// input {
-//     cursor: text;
-//     border-radius: 10px;
-//     -webkit-transition: all 0.30s ease-in-out;
-//     -moz-transition: all 0.30s ease-in-out;
-//     -ms-transition: all 0.30s ease-in-out;
-//     -o-transition: all 0.30s ease-in-out;
-//     outline: none;
-//     padding: 6px 0px 6px 3px;
-//     margin: 10px 1px 6px 0px;
-//     border: 1px solid #DDDDDD;
-//     width: 75%;
-// }
-// input:focus {
-//     box-shadow: 0 0 5px $secondary;
-//     padding: 6px 0px 6px 3px;
-//     margin: 10px 1px 6px 0px;
-//     border: 1px solid $secondary;
-//     background-color: $container;
-// }
-.input-button {
-    background-color: $secondary;
-    margin-top: 5%;
-    width: 30%;
-}
-
-.input-button {
-    padding: 5px 10px;
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: $secondary;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px #999;
-}
-
-.input-button:hover {
-    background-color: $secondary
-}
-
-.input-button:active {
-    background-color: #031129;
-    box-shadow: 0 1px #666;
-    transform: translateY(4px);
-}
 
 @media screen and (max-width: 1100px) {
-    // input {
-    //     cursor: vertical-text;
-    //     border-radius: 5px;
-    //     -webkit-transition: all 0.30s ease-in-out;
-    //     -moz-transition: all 0.30s ease-in-out;
-    //     -ms-transition: all 0.30s ease-in-out;
-    //     -o-transition: all 0.30s ease-in-out;
-    //     outline: none;
-    //     padding: 3px 0px 3px 3px;
-    //     margin: 5px 1px 3px 0px;
-    //     border: 1px solid #c4c3c3;
-    //     width: 75%;
-    // }
-    // input:focus {
-    //     box-shadow: 0 0 5px $secondary;
-    //     padding: 3px 0px 3px 3px;
-    //     margin: 5px 1px 3px 0px;
-    //     border: 1px solid $secondary;
-    //     background-color: $container;
-    // }
+
     .content{
 
           .slot-container {
@@ -253,7 +173,6 @@ h1 {
     }
 
     .form-group {
-        text-align: center;
         align-items: center;
     }
 

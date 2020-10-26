@@ -9,6 +9,7 @@ import Example from '@/components/Example'
 import Calendar from '@/components/Calendar'
 import Main from '@/components/Main'
 import StoredProjects from '../store/modules/projects'
+import Project from '../components/Project/Project.vue'
 
 
 
@@ -35,6 +36,12 @@ export default new Router({
       path: '/projects',
       name: 'Project',
       component: () => { return import ('../views/ProjectList.vue') }
+    },
+    {
+      path:'/project/:id',
+      name:'Id',
+      component: Project,
+      props: true
     },
     {
       path: '/contact',

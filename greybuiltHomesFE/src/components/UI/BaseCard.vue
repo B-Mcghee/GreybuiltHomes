@@ -12,16 +12,17 @@ export default {
 
 <style lang="scss" scoped>
 
-$primary: rgb(148,148,148);
+$primary: rgba(148,148,148, 0.5);
 $secondary: rgba(18,39,68, 0.55);
 
 
 .slot-container{
-  border-radius: 12px;
-  box-shadow: 0 2px 8px $secondary;
-  padding: 1rem;
-  margin: 2rem auto;
-  max-width: 40rem;
+  border-radius: 4px;
+  border: 1px solid $primary;
+  box-shadow: 0 2px 2px $primary;
+
+  margin: 2rem 1rem;
+  max-width: 30rem;
 
 
 }

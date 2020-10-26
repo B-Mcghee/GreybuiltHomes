@@ -16,9 +16,9 @@ $secondary: rgb(18,39,68);
   input {
     cursor: text;
     display: block;
-    max-width: 90%;
+    width: 75%;
     padding: 0.15rem;
-    border-radius: 10px;
+    border-radius: 7px;
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
