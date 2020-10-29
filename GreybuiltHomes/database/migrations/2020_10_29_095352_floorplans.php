@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Image extends Migration
+class Floorplans extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class Image extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table)
-        {
-            $table->id('image_id')->unique();
-            $table->string('file_path');
-            $table->string('file_name');
-            $table->string('extension');
-
+        Schema::create('floorplans', function (Blueprint $table) {
+            $table->id('floorplan_id');
+            $table->string('title');
+            $table->text('description');
+            $table->foreignId('cover_image_id');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +29,7 @@ class Image extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('floorplans');
+
     }
 }

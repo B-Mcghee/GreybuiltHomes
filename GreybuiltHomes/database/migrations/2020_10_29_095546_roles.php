@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Image extends Migration
+class Roles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class Image extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table)
-        {
-            $table->id('image_id')->unique();
-            $table->string('file_path');
-            $table->string('file_name');
-            $table->string('extension');
-
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id('role_id');
+            $table->string('type');
         });
     }
 
@@ -30,6 +26,7 @@ class Image extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('roles');
+
     }
 }

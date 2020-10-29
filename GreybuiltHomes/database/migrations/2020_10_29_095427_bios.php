@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Image extends Migration
+class Bios extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Image extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table)
-        {
-            $table->id('image_id')->unique();
-            $table->string('file_path');
-            $table->string('file_name');
-            $table->string('extension');
-
+        Schema::create('bios', function (Blueprint $table) {
+            $table->id('bio_id');
+            $table->string('position');
+            $table->text('content');
+            $table->foreignId('user_id');
+            $table->foreignId('image_id');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +30,7 @@ class Image extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('bios');
+
     }
 }
