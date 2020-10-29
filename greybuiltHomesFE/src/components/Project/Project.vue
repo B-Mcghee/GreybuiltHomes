@@ -1,20 +1,20 @@
 <template>
-    <div>
+    <div class="project-page">
 
         <h1> This is the id {{ $route.params.id}}</h1>
         <div >
             <div class="project-image">
-                <figure>
-                    <img class="project" :src="project.image">
-                </figure>
+                <div v-for="image in project.images">
+                    <img class="project" :src="image">
+                </div>
             </div>
-            <div >
+            <!-- <div >
                 <h1>{{project.title}}</h1>
                 <p v-html="project.description"></p>
                 <p class="price">
                     {{project.price }}
                 </p>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- <div class="project" v-if="show">
@@ -44,15 +44,16 @@ export default {
     created: function() {
         axios.get('/static/projects.json')
             .then((response) => {
-                this.project =  response.data.projects.filter(
-                    data => data.id == this.$route.params.project_id)
-                this.project.image = "/" + this.project.image;
+                this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
+                this.project.image = '/' + this.project.image;
+
                 // this.project = response.data.projects.filter(
 
                 //   data = data.id = this.$route.params.id)[0]
                 //   this.project.image = '/' + this.project.image;
 
             });
+
     }
 }
 </script>
@@ -61,6 +62,10 @@ export default {
 $primary: rgba(148, 148, 148, .3);
 $shadowGrey: #54595f;
 $secondary: rgb(18, 39, 68);
+
+.project-page{
+  height: 100vh;
+}
 .project {
     display: flex;
     flex-direction: row;

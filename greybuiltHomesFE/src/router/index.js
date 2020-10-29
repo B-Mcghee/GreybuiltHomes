@@ -10,7 +10,8 @@ import Calendar from '@/components/Calendar'
 import Main from '@/components/Main'
 import StoredProjects from '../store/modules/projects'
 import Project from '../components/Project/Project.vue'
-
+import Admin from '../components/Admin/Admin.vue'
+import AddProject from '../components/Project/AddProject.vue'
 
 
 Vue.use(Router)
@@ -63,6 +64,20 @@ export default new Router({
       path: '/calendar',
       name: 'Calendar',
       component: Calendar
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin,
+      props: true,
+      children: [
+        {
+          path: 'Add',
+          name: 'AddProject',
+          component: AddProject,
+          props: true
+        }
+      ]
     }
   ]
 })

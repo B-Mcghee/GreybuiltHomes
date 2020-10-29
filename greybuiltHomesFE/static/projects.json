@@ -4,35 +4,40 @@
       "project_id": 1,
       "title": "Corydon",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
-      "image": "static/Images/blueprint.jpg",
+      "cover_image": "static/Images/blueprint.jpg",
+      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
       "project_id": 2,
       "title": "New Albany",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
-      "image": "static/Images/House.jpg",
+      "cover_image": "static/Images/House.jpg",
+      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
       "project_id": 3,
       "title": "Jeffersonville",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
-      "image": "static/Images/side.jpg",
+      "cover_image": "static/Images/side.jpg",
+      "images": ["static/Images/side.jpg","static/Images/House.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
       "project_id": 4,
       "title": "Louisville",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
-      "image": "static/Images/side.jpg",
+      "cover_image": "static/Images/side.jpg",
+      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
       "project_id": 5,
       "title": "Lexington",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
-      "image": "static/Images/side.jpg",
+      "cover_image": "static/Images/side.jpg",
+      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     }
   ]

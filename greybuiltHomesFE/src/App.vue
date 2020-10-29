@@ -56,7 +56,10 @@ export default {
                 text: 'Contact',
                 path: '/contact',
                 icon: 'fas fa-id-card'
-            }
+            },
+
+
+
         ]
 
     })
