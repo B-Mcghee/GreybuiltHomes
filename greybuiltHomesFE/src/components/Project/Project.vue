@@ -4,9 +4,12 @@
         <h1> This is the id {{ $route.params.id}}</h1>
         <div >
             <div class="project-image">
-                <div v-for="image in project.images">
+                <div v-for="image in project.images" >
                     <img class="project" :src="image">
                 </div>
+            </div>
+            <div>
+              <img :src="image" alt="">
             </div>
             <!-- <div >
                 <h1>{{project.title}}</h1>
@@ -38,15 +41,21 @@ export default {
     props: ['title', 'projectImage', 'show', 'description'],
     data() {
         return {
-            project: ''
+            project: '',
+            image: ''
         }
     },
+    // created: function() {
+    //     axios.get('/static/projects.json')
+    //         .then((response) => {
+    //             this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
+    //             this.project.image = '/' + this.project.image;
     created: function() {
-        axios.get('/static/projects.json')
+        axios.get('http://127.0.0.1:8001/projects')
             .then((response) => {
-                this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
-                this.project.image = '/' + this.project.image;
-
+                console.log(response.data[0]);
+                // this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
+               this.image = "/" +response.data[0].file_path + response.data[0].file_name + response.data[0].extension
                 // this.project = response.data.projects.filter(
 
                 //   data = data.id = this.$route.params.id)[0]
