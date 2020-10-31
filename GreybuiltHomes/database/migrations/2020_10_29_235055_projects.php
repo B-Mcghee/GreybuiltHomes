@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Project extends Migration
+class Projects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Project extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table){
             $table->id('project_id');
             $table->string('title');
-            $table->string('content');
-            $table->string('email')->unique();
-            $table->dateTime('created');
-            $table->timestamps();
+            $table->text('description');
+            $table->foreignId('cover_image_id');
+            $table->boolean('show_project');
+
         });
     }
 
