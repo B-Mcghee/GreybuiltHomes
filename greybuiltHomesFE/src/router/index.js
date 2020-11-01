@@ -12,6 +12,7 @@ import StoredProjects from '../store/modules/projects'
 import Project from '../components/Project/Project.vue'
 import Admin from '../components/Admin/Admin.vue'
 import AddProject from '../components/Project/AddProject.vue'
+import Bio from '../components/Bio/Bio.vue'
 
 
 Vue.use(Router)
@@ -34,13 +35,19 @@ export default new Router({
       component: () => { return import ('../views/BioList.vue')}
     },
     {
+      path:'/about/:id',
+      name: 'SingleBio',
+      component: Bio,
+      props: true
+    },
+    {
       path: '/projects',
       name: 'Project',
       component: () => { return import ('../views/ProjectList.vue') }
     },
     {
       path:'/project/:id',
-      name:'Id',
+      name:'SingleProject',
       component: Project,
       props: true
     },

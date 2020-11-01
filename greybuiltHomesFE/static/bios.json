@@ -1,7 +1,7 @@
 {
   "bios": [
     {
-      "BioId": 1,
+      "Bio_Id": 1,
       "FirstName": "Aaron",
       "LastName": "Witt",
       "Position": "Owner",
@@ -10,7 +10,7 @@
 
     },
     {
-      "BioId": 2,
+      "Bio_Id": 2,
       "FirstName": "Bilal",
       "LastName": "Powell",
       "Position": "Owner",
