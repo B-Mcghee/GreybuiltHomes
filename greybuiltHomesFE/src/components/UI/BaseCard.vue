@@ -17,7 +17,7 @@ $secondary: rgba(18,39,68, 0.55);
 
 
 .slot-container{
-  border-radius: 4px;
+
   border: 1px solid $primary;
   box-shadow: 0 2px 2px $primary;
 

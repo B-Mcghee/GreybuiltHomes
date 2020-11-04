@@ -9,7 +9,7 @@
                   hoverBackground="#999"
 
                 ></app-main> -->
-        <navigation :nav-links="navLinks" :image-path="require('../static/Images/GB_Homes_Reverse.png')" linkColor="#777" />
+        <!-- <navigation :nav-links="navLinks" :image-path="require('../static/Images/GB_Homes_Reverse.png')" linkColor="#777" /> -->
         <!-- <app-header :nav-links="navLinks" :image-path="require('../static/Images/logo.png')"></app-header> -->
         <router-view/>
     </div>
@@ -53,7 +53,7 @@ export default {
 
             {
 
-                text: 'Contact',
+                text: 'Contact Us',
                 path: '/contact',
                 icon: 'fas fa-id-card'
             },

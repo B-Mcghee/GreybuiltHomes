@@ -1,19 +1,17 @@
 <template>
     <div class="root">
       <h1>Meet The Team</h1>
-    <div v-for="bio in allBios" :key="bio.BioId">
-      <Bio :bio = bio />
-    </div>
+      <stored-bios :bios = allBios />
   </div>
 </template>
 
 <script>
-import Bio from '../components/Bio/Bio'
+import StoredBios from '../components/Bio/StoredBios'
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   components:{
-    Bio
+    StoredBios
   },
   methods: {
     ...mapActions(['fetchBios'])

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+Route::get('/projects', function () {
+
+   return DB::select('Select project_id, title, description, file_path, file_name, extension from projects p inner join images i on i.image_id = p.cover_image_id');
+}
+);

@@ -8,7 +8,7 @@
                         <img :src="project.cover_image" alt="">
                     </div>
                         <div class="project-title">
-                            <router-link tag="h3" :to="{name: 'Id', params: {id: project.project_id}}">{{project.title}}</router-link>
+                            <router-link tag="h3" :to="{name: 'SingleProject', params: {id: project.project_id}}">{{project.title}}</router-link>
                             <p>{{project.description}}</p>
                         </div>
                     <div>
