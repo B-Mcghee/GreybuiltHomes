@@ -3,7 +3,7 @@
         <div class="grid-container">
             <div class="menu grid-item-1 small-grid-container">
                 <div class="logo-background small-grid-1">
-                    <img class="logo" src="/static/Images/logo.png" alt="">
+                    <img class="logo" src="static/Images/GB_Homes_Reverse_original.png" alt="">
                 </div>
                 <!-- <div class="mobile-background">
                       <img class = "mobile-background-image" src="/static/Images/blueprint.jpg" alt="">

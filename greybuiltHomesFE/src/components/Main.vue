@@ -1,5 +1,10 @@
 <template>
-  <nav :style = "{background: [background, '#0C1B33'] }" ref="nav" >
+<div>
+  <div class="logo">
+    <img src="/static/Images/GB_Homes_Reverse_original.png" alt="">
+  </div>
+</div>
+  <!-- <nav :style = "{background: [background, '#0C1B33'] }" ref="nav" >
     <ul :style = "{background: [background, '#0C1B33'] }">
       <figure class="image-logo">
         <img :src="imagePath" height="40px" width="40px" alt=""/>
@@ -16,7 +21,7 @@
       :to="{name: link.path}">{{link.text}}<i :class="link.icon"/></router-link>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 </template>
 
 <script>
@@ -93,5 +98,11 @@ export default {
       }
     }
   }
-
+@media screen and (max-width: 500px) {
+  .logo{
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+  }
+}
 </style>

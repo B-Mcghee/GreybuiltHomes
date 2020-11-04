@@ -1,21 +1,24 @@
 <template>
-
     <div class="bio-container">
-        <router-link
-        v-for="bio in bios" :key="bio.Bio_Id" tag="div"
-        :to="{name: 'SingleBio', params: {id:bio.Bio_Id}}"
-        class="bio-individual">
+
+        <router-link v-for="bio in bios" :key="bio.Bio_Id" class="bio" tag="div" :to="{name: 'SingleBio', params: {id:bio.Bio_Id}}">
             <base-card>
-                <img :src="bio.Image" alt="">
-                <h1>{{bio.FirstName}} {{bio.LastName}}</h1>
-                <h3>{{bio.Position}}</h3>
-                <p>{{bio.Description}}</p>
+                <div class="bio-pic">
+                    <img :src="bio.Image" alt="">
+                </div>
+                <div class="bio-info">
+                    <h1>{{bio.FirstName}} {{bio.LastName}}</h1>
+                    <h3>{{bio.Position}}</h3>
+                    <p>{{bio.Description}}</p>
+                </div>
             </base-card>
         </router-link>
+
+
+
+
         <!-- <Bio :bio = bio /> -->
     </div>
-
-
 </template>
 
 <script>
@@ -30,33 +33,69 @@ export default {
 
 <style lang="scss" scoped>
 img {
-    margin: 2em auto .5em auto;
-    border-radius: 1em;
-    max-width: 300px;
-    max-height: 200px;
+    margin: 0;
+    max-width: 500px;
     background-position: center;
     /* Center the image */
     background-repeat: no-repeat;
     background-size: cover;
 }
-@media screen and (max-width: 1024px) {
 
+.bio {
+    margin: 5% auto;
+    display: inline-block;
+
+    .slot-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 60rem;
+        margin: 0 10% 0 15%;
+    }
+    h3{
+      margin: 10% 5%;
+    }
+    p{
+      margin: 2% 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    img {
+        max-width: 100%;
+    }
+    .bio-container {
+        .bio {
+            margin: 5% auto;
+        }
+        .slot-container {
+            display: block;
+            margin: 0 10% 0 15%;
+            max-width: 40rem;
+        }
+    }
 }
 
 @media screen and (max-width: 759px) {
-
-        .bio-container {
-            margin: 0 5% 0 15%;
-
+    .bio-container {
+        .bio {
+            margin: 5% auto;
         }
-
-
+        .slot-container {
+            margin: 0 5% 0 15%;
+            max-width: 40rem;
+        }
+    }
 }
 
 @media screen and (max-width: 500px) {
     .bio-container {
-        margin: 0 auto;
-
+        .bio {
+            margin: 5% 1em;
+        }
+        .slot-container {
+            margin: 0 auto;
+            max-width: 30rem;
+        }
     }
 }
 </style>
