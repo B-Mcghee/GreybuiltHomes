@@ -1,9 +1,10 @@
 <template>
 <nav :style = "{background: [background, 'rgb(18,39,68)' ] }"  >
-    <ul :style = "{background: [background, 'rgb(18,39,68)'] }" ref="nav">
-      <figure class="image-logo" @click="toggleNav">
+        <figure class="image-logo" @click="toggleNav">
         <img :src="imagePath"   alt=""/>
       </figure>
+    <ul :style = "{background: [background, 'rgb(18,39,68)'] }" ref="nav">
+
       <li v-for="(link, index) in navLinks"
       :key ="index"
       :style = "{color:[linkColor, '#FFF']}"
@@ -57,7 +58,19 @@ nav {
 	height: 60px;
 	width: 100%;
 
+		figure {
+      img{
+        width:60px;
+        				z-index: 5;
+      }
+        position: absolute;
 
+
+				top: 10px;
+				left: 5px;
+			cursor: pointer;
+			margin-right: 10px;
+		}
 	ul {
 		display: flex;
 		height: 100%;
@@ -67,18 +80,9 @@ nav {
 		padding-inline-start: 0;
     cursor: pointer;
     justify-content: flex-end;
+    z-index: 1;
 
-		figure {
-      img{
-        width:70px;
-      }
-      	position: fixed;
-				z-index: 1;
-				top: 10px;
-				left: 5px;
-			cursor: pointer;
-			margin-right: 10px;
-		}
+
 		a {
 			text-decoration: none;
 			display: flex;
@@ -117,15 +121,7 @@ nav {
 			&.active {
 				left: 0px;
 			}
-			figure {
-              img{
-        width:60px;
-      }
-				position: fixed;
-				z-index: 1;
-				top: 10px;
-				left: -5px;
-			}
+
 			li {
         align-self: flex-end;
 				width: 100%;
@@ -146,6 +142,15 @@ nav {
       }
 
 		}
+    			figure {
+              img{
+        width:60px;
+      }
+
+				z-index: 1;
+				top: 10px;
+				left: -5px;
+			}
 	}
   .icon{
     display: block;
@@ -165,6 +170,9 @@ nav {
 
 @media screen and (max-width: 500px) {
   nav {
+    figure{
+      z-index: 5;
+    }
     height: 50px;
 		ul {
 			position: fixed;

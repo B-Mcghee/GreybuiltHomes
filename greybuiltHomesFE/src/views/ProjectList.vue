@@ -39,7 +39,9 @@ $secondary: rgb(18,39,68);
 html {
     height: 100vh;
 }
-
+.root{
+  text-align: center;
+}
 
 // @media screen and (max-width: 500px) {
 //     .project-container {

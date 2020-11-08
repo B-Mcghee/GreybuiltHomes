@@ -28,6 +28,16 @@
                                 <label for="">Schedule Call</label>
                                 <base-input type="datetime-local"></base-input>
                             </div>
+                            <div class="form-control price-range">
+                                <select name="price-range" id="price-range">
+                                    <option v-for="( price) in priceRange" :key=(price) value="price">{{price}}</option>
+                                  </select>
+                            </div>
+                            <div class="form-control sq-footage">
+                                <select name="sq-footage" id="sq-footage">
+                                    <option v-for="( amount) in sqFootage" :key=(amount) value="price">{{amount}}</option>
+                                  </select>
+                            </div>
 
 
                         </div>
@@ -65,6 +75,26 @@ export default {
 
             },
             timezone: '',
+            priceRange: ['$200,000 - $300,000', '$300,000 - $400,000', '$400,000 - $500,000', '$500,000 - $600,000', '$600,000 +'],
+            sqFootage: [
+                '1,000 - 1,250',
+                '1,250 - 1,500',
+                '1,500 - 1,800',
+                '1,800 - 2,000',
+                '2,000 - 2,500',
+                '2,500 - 3,000',
+                '3,000 - 4,000',
+                '4,000 +'
+            ]
+            //-
+            // -
+            // -
+            // -
+            // -
+            // -
+            // -
+            // -
+
         }
     },
     components: {

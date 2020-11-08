@@ -1,38 +1,33 @@
 <template>
-    <div>
-
-        <div class="projects" v-for="project in projects" :key="project.project_id">
-            <div class="project-item">
-                <div class="project" v-if="project.showProject">
-                    <div class="project-image">
-                        <img :src="project.cover_image" alt="">
-                    </div>
-                        <div class="project-title">
-                            <router-link tag="h3" :to="{name: 'SingleProject', params: {id: project.project_id}}">{{project.title}}</router-link>
-                            <p>{{project.description}}</p>
-                        </div>
-                    <div>
-
-                        <!-- <project
-                            :projectImage="project.image"
-                            :title="project.title"
-                            :show="project.showProject"
-                            :description="project.description">
-
-                            </project> -->
-                    </div>
+    <div class="project-container">
+        <!-- <router-link v-for="project in projects" :key="project.project_id" class="project" tag="div" :to="{name: 'Singleproject', params: {id:project.project_id}}">
+            <base-card>
+                <div class="project-pic">
+                    <img :src="project.cover_image" alt="">
                 </div>
-
-
-            </div>
-        </div>
+                <div class="project-info">
+                    <h1>{{project.title}}</h1>
+                    <p>{{project.description}}</p>
+                </div>
+            </base-card>
+        </router-link> -->
+                <router-link v-for="project in projects" :key="project.project_id" class="project" tag="div" :to="{name: 'SingleProject', params: {id:project.project_id}}">
+            <base-card>
+                <div class="project-pic">
+                    <img :src="project.cover_image" alt="">
+                </div>
+                <div class="project-info">
+                    <h1>{{project.title}}</h1>
+                    <p>{{project.description}}</p>
+                </div>
+            </base-card>
+        </router-link>
     </div>
 </template>
 
 <script>
 import Project from './Project'
 export default {
-
     props: ['projects'],
     components: {
         Project
@@ -40,52 +35,72 @@ export default {
 }
 </script>
 
-<style lang="scss">
-div {
-    box-sizing: border-box;
+<style lang="scss" scoped>
+
+
+img {
+    margin: 0;
+    max-width: 500px;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.project-item {
-    margin: 2.5% auto;
-    max-width: 96%;
-    border: 1px solid rgba(148, 148, 148, 0.5);
-}
-
-$primary: rgba(148, 148, 148, .3);
-$shadowGrey: #54595f;
-$secondary: rgb(18, 39, 68);
 .project {
-    display: flex;
-    flex-direction: row;
-}
+    margin: 5% auto;
 
-.project-image {
-    flex-grow: 1;
-    max-height: 125px;
-    img {
-        display: block;
-        max-height: 100%;
-        min-height: 90px;
-        max-width: 120px;
+    .slot-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 60rem;
+        margin: 0 10% 0 15%;
     }
-}
-
-.project-title {
-    display: block;
-    flex-grow: 8;
-    text-align: left;
-    background-color: $primary;
     h3 {
-        margin-left: 2%;
-        font-size: 1em;
+        margin: 10% 5%;
     }
     p {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        margin-left: 2%;
-        font-size: .5em;
+        margin: 2% 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    img {
+        max-width: 100%;
+    }
+    .project-container {
+        .project {
+            margin: 5% auto;
+        }
+        .slot-container {
+            display: block;
+            margin: 0 20% 0 20%;
+            max-width: 40rem;
+        }
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .project-container {
+        .project {
+            margin: 5% auto;
+        }
+        .slot-container {
+            margin: 0 5% 0 15%;
+            max-width: 40rem;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-container {
+        .project {
+            margin: 5% 1em;
+        }
+        .slot-container {
+            margin: 0 auto;
+            max-width: 30rem;
+        }
     }
 }
 </style>

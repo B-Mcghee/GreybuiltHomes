@@ -95,6 +95,9 @@ img {
 }
 
 @media screen and (max-width: 1024px) {
+    .bio-flex{
+    display: block;
+  }
     .bio-individual {
 
         margin: 0 15%;
@@ -130,6 +133,7 @@ img {
 }
 
 @media screen and (max-width: 500px) {
+
     .bio-individual {
         margin: 0 auto;
     }

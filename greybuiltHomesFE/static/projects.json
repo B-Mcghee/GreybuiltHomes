@@ -5,7 +5,7 @@
       "title": "Corydon",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
       "cover_image": "static/Images/blueprint.jpg",
-      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
+      "images": ["static/Images/side.jpg","static/Images/House.jpg","static/Images/blueprint.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
@@ -13,7 +13,7 @@
       "title": "New Albany",
       "description": "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
       "cover_image": "static/Images/House.jpg",
-      "images": ["static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg","static/Images/side.jpg"],
+      "images": ["static/Images/side.jpg","static/Images/House.jpg","static/Images/blueprint.jpg","static/Images/side.jpg","static/Images/side.jpg"],
       "showProject": true
     },
     {
