@@ -1,31 +1,20 @@
 <template>
     <div class="project-page">
-        <!-- <div class="project-individual">
-            <base-card>
-                <h1>{{project.title}}</h1>
-            </base-card> -->
-            <slider
-            @next="next"
-            @prev="prev">
-              <slide
-              v-for="(image,index) in project.images"
-              :key="index"
-              :index="index"
-              :currentSlide = "currentSlide">
-              <img :src="image" alt="">
-              </slide>
-            </slider>
-
-
-            <!-- <div class="project-flex">
-
-                <div class="project-images" v-for="(image, index) in project.images" :key="index">
-                    <base-card class="individual-image">
-                        <img :src="image" alt="">
-                    </base-card>
-                </div>
-            </div> -->
-        <!-- </div> -->
+        <div class="exit-icon">
+            <router-link tag="button" :to="'/projects'" @click.native="exit" mode="flat">Exit</router-link>
+        </div>
+        <h1 class="project-title">{{project.title}}</h1>
+        <slider :direction="direction">
+            <slide v-for="(image,index) in project.images" :key="index" :index="index" :currentSlide="currentSlide" :direction="direction">
+                <img :src="image" alt="">
+            </slide>
+        </slider>
+        <div class="selection-buttons">
+            <base-button @click.native="prev" mode="flat">Prev</base-button>
+            <base-button @click.native="next" mode="flat">Next</base-button>
+        </div>
+        <router-link tag="div" :to="'/projects'" @click="exit" class="overlay"></router-link>
+        <!-- <router-link  class="overlay"></router-link> -->
     </div>
 </template>
 
@@ -40,35 +29,41 @@ export default {
         return {
             project: '',
             image: '',
-            currentSlide:0
+            currentSlide: 0,
+            direction: ''
+
         }
     },
-    components:{
-      Slider,
-      Slide
+    components: {
+        Slider,
+        Slide
     },
-    computed:{
-      slideLength() {
-        return this.project.images.length;
-      }
+    computed: {
+        slideLength() {
+            return this.project.images.length;
+        }
     },
-    methods:{
-      next(){
-        if(this.currentSlide >= this.slideLength - 1 )
-        {
-          this.currentSlide = 0;
-        }else{
-          this.currentSlide++;
+    methods: {
+        next() {
+            if (this.currentSlide >= this.slideLength - 1) {
+                this.currentSlide = 0;
+            } else {
+                this.currentSlide++;
+            }
+            this.direction = 'left'
+        },
+        prev() {
+            if (this.currentSlide <= 0) {
+                this.currentSlide = this.slideLength - 1;
+            } else {
+                this.currentSlide--;
+            }
+            this.direction = 'right'
+
+        },
+        exit() {
+
         }
-      },
-      prev(){
-        if(this.currentSlide <= 0)
-        {
-          this.currentSlide >= this.slideLength - 1;
-        }else{
-          this.currentSlide--;
-        }
-      }
     },
 
     created: function() {
@@ -100,54 +95,105 @@ $shadowGrey: #54595f;
 $secondary: rgb(18, 39, 68);
 .project-page {
     height: 100vh;
-}
-
-.project {
-    display: flex;
-    flex-direction: row;
-}
-
-.project-image {
-    flex-grow: 1;
-    max-height: 125px;
-    img {
-        display: block;
-        max-height: 100%;
-        min-height: 90px;
-        max-width: 120px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 50% 1fr;
+    .exit-icon,
+    .selection-buttons,
+    .slide,
+    .slider,
+    .project-title {
+        z-index: 3;
     }
 }
 
 .project-title {
-    display: block;
-    flex-grow: 8;
-    text-align: left;
-    background-color: $primary;
-    h3 {
-        margin-left: 2%;
-        font-size: 1em;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.overlay {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 1000px;
+    background-color: rgba(0, 0, 0, .9);
+}
+    .exit-icon {
+        position: absolute;
+        margin-top: 5%;
+        right: 5%;
     }
-    p {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        margin-left: 2%;
-        font-size: .5em;
+    .project-page {
+        grid-template-rows: 10% 70% 1fr;
+
+
+    }
+    img {
+
+        max-width: 65%;
+        border-radius: 1em;
+    }
+        .selection-buttons {
+        margin: 2% auto;
+    }
+.slider{
+  margin: 0% 10% 0% 10%;
+}
+
+
+@media screen and (max-width:1024px) {
+    .exit-icon {
+        position: absolute;
+        margin-top: 5%;
+        right: 5%;
+    }
+    .project-page {
+        grid-template-rows: 10% 70% 1fr;
+        .slider {
+          margin: 0% 5% 0% 20%;
+
+        }
+    }
+
+    img {
+
+        max-width: 85%;
+        border-radius: 1em;
     }
 }
 
-@media screen and (max-width: 500px){
-  .project-images{
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+@media screen and (max-width:759px) {
+    .project-page {
+        grid-template-rows: 15% 60% 1fr;
 
-    img{
-
-      max-width: 100%;
     }
+    img {
 
+        max-width: 90%;
+    }
+  .selection-buttons{
+    padding-left: 5%;
   }
+}
+
+@media screen and (max-width: 500px) {
+    .project-title {
+        margin-top: 15%;
+    }
+    .project-page {
+        grid-template-columns: 100%;
+        grid-template-rows: 8% 60% 1fr;
+        .slider {
+            margin: 20% 5% 0% 5%;
+        }
+    }
+    img {
+        max-width: 100%;
+    }
 }
 </style>
