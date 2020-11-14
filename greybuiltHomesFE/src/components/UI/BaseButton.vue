@@ -1,12 +1,13 @@
 <template>
-  <button  :type = 'type' :class = mode>
+  <button  :type = 'type' :class = mode >
     <slot></slot>
   </button>
 </template>
 
 <script>
 export default {
-props:['type', 'mode'],
+props:['type', 'mode', 'color'],
+
 
 }
 </script>
@@ -25,9 +26,9 @@ $secondaryHover: #1d3e72;
     border: 1px solid $secondary;
     color: white;
     cursor: pointer;
-
-
+    outline: none;
   }
+
 
       button:hover,
     button:active {
@@ -36,13 +37,15 @@ $secondaryHover: #1d3e72;
     }
 
     .flat {
-  background-color: transparent;
+  background-color: $primary;
   color: $secondary;
+  font-weight: bold;
+
   border: none;
 }
 
 .flat:hover,
 .flat:active {
-  background-color: $secondaryHover;
+  background-color: $shadowGrey;
 }
 </style>

@@ -1,68 +1,90 @@
 <template>
     <div class="project-page">
-
-        <h1> This is the id {{ $route.params.id}}</h1>
-        <div >
-            <div class="project-image">
-                <div v-for="image in project.images" >
-                    <img class="project" :src="image">
-                </div>
-            </div>
-            <div>
-              <img :src="image" alt="">
-            </div>
-            <!-- <div >
-                <h1>{{project.title}}</h1>
-                <p v-html="project.description"></p>
-                <p class="price">
-                    {{project.price }}
-                </p>
-            </div> -->
+        <div class="exit-icon">
+            <router-link tag="button" :to="'/projects'" @click.native="exit" mode="flat">Exit</router-link>
         </div>
+        <h1 class="project-title">{{project.title}}</h1>
+        <slider :direction="direction">
+            <slide v-for="(image,index) in project.images" :key="index" :index="index" :currentSlide="currentSlide" :direction="direction">
+                <img :src="image" alt="">
+            </slide>
+        </slider>
+        <div class="selection-buttons">
+            <base-button @click.native="prev" mode="flat">Prev</base-button>
+            <base-button @click.native="next" mode="flat">Next</base-button>
+        </div>
+        <router-link tag="div" :to="'/projects'" @click="exit" class="overlay"></router-link>
+        <!-- <router-link  class="overlay"></router-link> -->
     </div>
-    <!-- <div class="project" v-if="show">
-            <div class="project-image">
-                <img :src="projectImage" alt="">
-            </div>
-            <div class="project-title">
-                <h3>{{title}}</h3>
-                <p>{{description}}</p>
-            </div>
-            <div>
-
-
-            </div>
-        </div> -->
 </template>
 
 <script>
+import Slider from '../Slider/Slider.vue';
+import Slide from '../Slider/Slide.vue';
+
 export default {
 
     props: ['title', 'projectImage', 'show', 'description'],
     data() {
         return {
             project: '',
-            image: ''
+            image: '',
+            currentSlide: 0,
+            direction: ''
+
         }
     },
-    // created: function() {
-    //     axios.get('/static/projects.json')
-    //         .then((response) => {
-    //             this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
-    //             this.project.image = '/' + this.project.image;
+    components: {
+        Slider,
+        Slide
+    },
+    computed: {
+        slideLength() {
+            return this.project.images.length;
+        }
+    },
+    methods: {
+        next() {
+            if (this.currentSlide >= this.slideLength - 1) {
+                this.currentSlide = 0;
+            } else {
+                this.currentSlide++;
+            }
+            this.direction = 'left'
+        },
+        prev() {
+            if (this.currentSlide <= 0) {
+                this.currentSlide = this.slideLength - 1;
+            } else {
+                this.currentSlide--;
+            }
+            this.direction = 'right'
+
+        },
+        exit() {
+
+        }
+    },
+
     created: function() {
-        axios.get('http://127.0.0.1:8001/projects')
+        axios.get('/static/projects.json')
             .then((response) => {
-                console.log(response.data[0]);
-                // this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
-               this.image = "/" +response.data[0].file_path + response.data[0].file_name + response.data[0].extension
-                // this.project = response.data.projects.filter(
+                this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
+                // this.project.image = '/' + this.project.cover_image;
+                console.log(this.project);
+                // created: function() {
+                //     axios.get('/static/projects.json')
+                //         .then((response) => {
+                //             console.log(response.data[0]);
+                //             // this.project = response.data.projects.filter(p => p.project_id == this.$route.params.id)[0]
+                //            this.image = "/" +response.data[0].file_path + response.data[0].file_name + response.data[0].extension
+                //             // this.project = response.data.projects.filter(
 
-                //   data = data.id = this.$route.params.id)[0]
-                //   this.project.image = '/' + this.project.image;
+                //             //   data = data.id = this.$route.params.id)[0]
+                //             //   this.project.image = '/' + this.project.image;
 
+                //         });
             });
-
     }
 }
 </script>
@@ -71,42 +93,107 @@ export default {
 $primary: rgba(148, 148, 148, .3);
 $shadowGrey: #54595f;
 $secondary: rgb(18, 39, 68);
-
-.project-page{
-  height: 100vh;
-}
-.project {
-    display: flex;
-    flex-direction: row;
-}
-
-.project-image {
-    flex-grow: 1;
-    max-height: 125px;
-    img {
-        display: block;
-        max-height: 100%;
-        min-height: 90px;
-        max-width: 120px;
+.project-page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 50% 1fr;
+    .exit-icon,
+    .selection-buttons,
+    .slide,
+    .slider,
+    .project-title {
+        z-index: 3;
     }
 }
 
 .project-title {
-    display: block;
-    flex-grow: 8;
-    text-align: left;
-    background-color: $primary;
-    h3 {
-        margin-left: 2%;
-        font-size: 1em;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.overlay {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 1000px;
+    background-color: rgba(0, 0, 0, .9);
+}
+    .exit-icon {
+        position: absolute;
+        margin-top: 5%;
+        right: 5%;
     }
-    p {
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        margin-left: 2%;
-        font-size: .5em;
+    .project-page {
+        grid-template-rows: 10% 70% 1fr;
+
+
+    }
+    img {
+
+        max-width: 65%;
+        border-radius: 1em;
+    }
+        .selection-buttons {
+        margin: 2% auto;
+    }
+.slider{
+  margin: 0% 10% 0% 25%;
+}
+
+
+@media screen and (max-width:1024px) {
+    .exit-icon {
+        position: absolute;
+        margin-top: 5%;
+        right: 5%;
+    }
+    .project-page {
+        grid-template-rows: 10% 70% 1fr;
+        .slider {
+          margin: 0% 5% 0% 20%;
+
+        }
+    }
+
+    img {
+
+        max-width: 85%;
+        border-radius: 1em;
+    }
+}
+
+@media screen and (max-width:759px) {
+    .project-page {
+        grid-template-rows: 15% 60% 1fr;
+
+    }
+    img {
+
+        max-width: 90%;
+    }
+  .selection-buttons{
+    padding-left: 5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+    .project-title {
+        margin-top: 15%;
+    }
+    .project-page {
+        grid-template-columns: 100%;
+        grid-template-rows: 8% 60% 1fr;
+        .slider {
+            margin: 20% 5% 0% 5%;
+        }
+    }
+    img {
+        max-width: 100%;
     }
 }
 </style>

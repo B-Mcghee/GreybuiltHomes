@@ -28,6 +28,18 @@
                                 <label for="">Schedule Call</label>
                                 <base-input type="datetime-local"></base-input>
                             </div>
+                            <div class="form-control price-range">
+                                <label for="price-range">Price Range</label>
+                                <select name="price-range" id="price-range">
+                                    <option v-for="( price) in priceRange" :key=(price) value="price">{{price}}</option>
+                                </select>
+                            </div>
+                            <div class="form-control sq-footage">
+                                <label for="price-range">Sq. Footage</label>
+                                <select name="sq-footage" id="sq-footage">
+                                    <option v-for="( amount) in sqFootage" :key=(amount) value="price">{{amount}}</option>
+                                  </select>
+                            </div>
 
 
                         </div>
@@ -65,6 +77,26 @@ export default {
 
             },
             timezone: '',
+            priceRange: ['$200,000 - $300,000', '$300,000 - $400,000', '$400,000 - $500,000', '$500,000 - $600,000', '$600,000 +'],
+            sqFootage: [
+                '1,000 - 1,250',
+                '1,250 - 1,500',
+                '1,500 - 1,800',
+                '1,800 - 2,000',
+                '2,000 - 2,500',
+                '2,500 - 3,000',
+                '3,000 - 4,000',
+                '4,000 +'
+            ]
+            //-
+            // -
+            // -
+            // -
+            // -
+            // -
+            // -
+            // -
+
         }
     },
     components: {
@@ -157,7 +189,21 @@ h1 {
     grid-template-columns: 20% auto;
     align-items: center;
 }
-
+    #price-range, #sq-footage{
+        cursor: pointer;
+    display: block;
+    width: 80%;
+    padding: 0.15rem;
+    border-radius: 7px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 6px 0px 6px 3px;
+    margin: 15px auto;
+    border: 1px solid rgba(148,148,148, .7);
+    }
 @media screen and (max-width: 1024px) {
     .content {
         .form-container {
@@ -210,5 +256,6 @@ h1 {
     h1 {
         font-size: 2em;
     }
+
 }
 </style>
