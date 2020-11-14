@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Bio extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'project_id';
+    protected $primarykey = 'bio_id';
 }

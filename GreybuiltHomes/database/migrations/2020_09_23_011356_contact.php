@@ -20,7 +20,7 @@ class Contact extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone_number');
-            $table->dateTime('follow_up_date');
+            $table->date('follow_up_date');
             $table->timestamps();
         });
     }

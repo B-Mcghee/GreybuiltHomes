@@ -15,8 +15,22 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/projects', function () {
+/*
+|--------------------------------------------------------------------------
+| PROJECT ROUTES
+|--------------------------------------------------------------------------
+|
+|
+*/
 
-   return DB::select('Select project_id, title, description, file_path, file_name, extension from projects p inner join images i on i.image_id = p.cover_image_id');
-}
-);
+
+Route::get('/projects', '\App\Http\Controllers\ProjectsController@index');
+
+Route::get('/contacts', function(){
+    $Contacts = App\Models\Contact::all();
+
+    foreach($Contacts as $contact)
+    {
+        echo $contact ;
+    }
+});
