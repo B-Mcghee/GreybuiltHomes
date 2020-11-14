@@ -142,7 +142,7 @@ $secondary: rgb(18, 39, 68);
         margin: 2% auto;
     }
 .slider{
-  margin: 0% 10% 0% 10%;
+  margin: 0% 10% 0% 25%;
 }
 
 
