@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models;
 
 class Contact extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'contact_id';
+    protected $primaryKey = 'contact_id';
+
+
 }

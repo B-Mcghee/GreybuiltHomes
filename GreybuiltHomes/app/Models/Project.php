@@ -9,5 +9,11 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'project_id';
+    protected $primaryKey = 'project_id';
+
+
+    public function image(){
+
+        return $this->hasOne('App\Models\Image','image_id');
+    }
 }
