@@ -9,5 +9,17 @@ class Bio extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'bio_id';
+    protected $primaryKey = 'bio_id';
+
+    public function cover_image(){
+
+        return $this->hasOne('App\Models\Image', 'image_id');
+    }
+
+    public function user(){
+
+        return $this->hasOne('App\Models\User','user_id');
+    }
 }
+
+

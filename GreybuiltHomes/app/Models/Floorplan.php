@@ -9,5 +9,5 @@ class Floorplan extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'floorplan_id';
+    protected $primaryKey = 'floorplan_id';
 }

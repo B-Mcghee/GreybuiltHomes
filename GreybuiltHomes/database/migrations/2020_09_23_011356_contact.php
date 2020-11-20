@@ -21,6 +21,7 @@ class Contact extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone_number');
             $table->date('follow_up_date');
+            $table->boolean(('contacted'))->default(0);
             $table->timestamps();
         });
     }

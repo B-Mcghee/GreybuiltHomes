@@ -9,5 +9,11 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'image_id';
+    protected $primaryKey = 'image_id';
+
+
+    public function image(){
+
+        return $this->belongsTo('App\Models\Bio', 'image_id');
+    }
 }
