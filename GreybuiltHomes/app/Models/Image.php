@@ -11,4 +11,9 @@ class Image extends Model
 
     protected $primaryKey = 'image_id';
 
+
+    public function image(){
+
+        return $this->belongsTo('App\Models\Bio', 'image_id');
+    }
 }

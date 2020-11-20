@@ -3,7 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models;
+use App\Models\Bio;
 use App\Models\Image;
+use App\Models\Project;
+
 
 
 /*
@@ -24,19 +27,25 @@ use App\Models\Image;
 |
 |
 */
-Route::get('/projects', function(){
-    $Projects = App\Models\Project::all();
 
-    foreach($Projects as $project)
-    {
-        return $project;
-    }
-});
-Route::get('/projects/{id}', function($id){
-    $Project = App\Models\Project::find($id)->image;
+Route::get('/', 'ProjectsController@index');
+// Route::get('/projects', function(){
+//     $Projects = App\Models\Project::all();
 
-    return $Project;
-});
+//     foreach($Projects as $project)
+//     {
+//         return $project;
+//     }
+// });
+// Route::get('/projects/{id}', function($id){
+//     $Projects = Project::find($id);
+
+//     return $Projects->images;
+//     //  foreach($Projects->images as $project)
+//     //  {
+//     //      echo $project ;
+//     //  };
+// });
 
 
 
@@ -77,10 +86,14 @@ Route::get('/about', function(){
 });
 
 Route::get('/about/{id}', function($id){
-    return App\Models\Bio::find($id)->image;
+    return Image::find($id)->image;
 
 });
 
+Route::get('/abouts/{id}', function($id){
+    return Bio::find($id)->cover_image;
+
+});
 
 
 /*

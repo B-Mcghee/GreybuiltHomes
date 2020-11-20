@@ -13,7 +13,7 @@ class FloorplanImages extends Migration
      */
     public function up()
     {
-        Schema::create('floorplan_images', function (Blueprint $table) {
+        Schema::create('floorplan_image', function (Blueprint $table) {
             $table->id('floorplan_image_id');
             $table->foreignId('floorplan_id');
             $table->foreignId('image_id');
@@ -28,7 +28,7 @@ class FloorplanImages extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('floorplan_images');
+        Schema::dropIfExists('floorplan_image');
 
     }
 }

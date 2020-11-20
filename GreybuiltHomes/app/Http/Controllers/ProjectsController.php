@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectsController extends Controller
 {
@@ -13,9 +14,14 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return "its working";
+        return view('projects');
     }
 
+    public function get(Request $request)
+    {
+        $projects = Project::orderBy('project_id', 'asc')->get();
+        return response()->json($projects);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +40,20 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = Project::create($request->all());
+        return response()->json($project);
+    }
+
+      /**
+     * delete a project .
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        Project::destroy($id);
+        return response()->json("ok");
     }
 
     /**

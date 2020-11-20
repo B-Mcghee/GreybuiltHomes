@@ -11,7 +11,7 @@ class Bio extends Model
 
     protected $primaryKey = 'bio_id';
 
-    public function image(){
+    public function cover_image(){
 
         return $this->hasOne('App\Models\Image', 'image_id');
     }
